@@ -8,9 +8,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Schoolbell&display=swap" rel="stylesheet">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -25,6 +27,10 @@ body {
   color: #587b8e;
   font-family: "Nunito", sans-serif;
 }
+
+/* =========================
+   GENERAL
+========================= */
 
 .page {
   min-height: 100vh;
@@ -52,6 +58,12 @@ body {
   box-shadow: 0 12px 35px rgba(74,145,181,.12);
 }
 
+.small {
+  font-family: "Schoolbell", cursive;
+  color: #76abc6;
+  font-size: 19px;
+}
+
 h1,
 h2 {
   font-family: "Fredoka", sans-serif;
@@ -73,32 +85,30 @@ p {
   line-height: 1.8;
 }
 
-.small,
-.chapter-number,
-.first-date {
-  font-family: "Schoolbell", cursive;
-  color: #76abc6;
-}
+/* =========================
+   OPENING
+========================= */
 
-.small {
-  font-size: 19px;
-}
-
-.chapter-number {
-  font-size: 19px;
-}
-
-.date {
-  color: #8caab8;
-  font-size: 14px;
-  margin-bottom: 28px;
-}
-
-.opening {
+#opening {
   text-align: center;
-  line-height: 2;
-  font-size: 17px;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #ffffff 0%,
+      #eaf8ff 45%,
+      #d8f0ff 100%
+    );
 }
+
+.opening-text {
+  font-size: 17px;
+  line-height: 2;
+  color: #587b8e;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 button {
   border: none;
@@ -137,7 +147,31 @@ button:active {
   background: #f4fbfe;
 }
 
-/* chat */
+/* =========================
+   CHAPTER
+========================= */
+
+.chapter-number {
+  font-family: "Schoolbell", cursive;
+  color: #76abc6;
+  font-size: 19px;
+}
+
+.date {
+  color: #8caab8;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.narration {
+  margin-top: 28px;
+  color: #648494;
+  line-height: 1.85;
+}
+
+/* =========================
+   CHAT
+========================= */
 
 .chat {
   display: flex;
@@ -176,13 +210,9 @@ button:active {
   border-bottom-right-radius: 5px;
 }
 
-.narration {
-  margin-top: 28px;
-  color: #648494;
-  line-height: 1.85;
-}
-
-/* firsts */
+/* =========================
+   FIRSTS
+========================= */
 
 .first-item {
   padding-left: 17px;
@@ -191,6 +221,8 @@ button:active {
 }
 
 .first-date {
+  font-family: "Schoolbell", cursive;
+  color: #76abc6;
   font-size: 20px;
 }
 
@@ -199,7 +231,9 @@ button:active {
   color: #4f829d;
 }
 
-/* playlist */
+/* =========================
+   PLAYLIST
+========================= */
 
 .playlist-intro {
   margin-bottom: 28px;
@@ -230,7 +264,17 @@ button:active {
   font-size: 13px;
 }
 
-/* final flower */
+/* =========================
+   ENDING
+========================= */
+
+.ending-text {
+  line-height: 2;
+}
+
+/* =========================
+   FLOWER SURPRISE
+========================= */
 
 #flower-surprise {
   min-height: 100vh;
@@ -241,6 +285,7 @@ button:active {
   padding: 35px 18px;
   position: relative;
   overflow: hidden;
+
   background:
     radial-gradient(
       circle at center,
@@ -272,18 +317,270 @@ button:active {
   max-width: 650px;
 }
 
-.bouquet-image {
-  width: min(92%, 530px);
-  max-height: 55vh;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 12px;
-  filter: drop-shadow(0 18px 28px rgba(72,145,184,.2));
+/* =========================
+   BOUQUET
+========================= */
+
+.bouquet {
+  position: relative;
+  width: 330px;
+  height: 315px;
+  margin: 0 auto 5px;
   animation: bouquetIn 1.5s cubic-bezier(.2,.8,.2,1);
 }
 
+.flowers {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+/* white gerberas */
+
+.flower {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  z-index: 3;
+}
+
+.flower-one {
+  left: 35px;
+  top: 62px;
+  transform: rotate(-8deg);
+}
+
+.flower-two {
+  left: 112px;
+  top: 12px;
+  transform: scale(1.08);
+}
+
+.flower-three {
+  right: 32px;
+  top: 63px;
+  transform: rotate(8deg);
+}
+
+.petals {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.petals span {
+  position: absolute;
+  width: 43px;
+  height: 59px;
+  left: 31px;
+  top: 22px;
+  background: #ffffff;
+  border-radius: 50% 50% 46% 46%;
+  transform-origin: center 30px;
+  box-shadow:
+    0 3px 8px rgba(100,160,185,.07);
+}
+
+.petals span:nth-child(1) {
+  transform: rotate(0deg) translateY(-27px);
+}
+
+.petals span:nth-child(2) {
+  transform: rotate(45deg) translateY(-27px);
+}
+
+.petals span:nth-child(3) {
+  transform: rotate(90deg) translateY(-27px);
+}
+
+.petals span:nth-child(4) {
+  transform: rotate(135deg) translateY(-27px);
+}
+
+.petals span:nth-child(5) {
+  transform: rotate(180deg) translateY(-27px);
+}
+
+.petals span:nth-child(6) {
+  transform: rotate(225deg) translateY(-27px);
+}
+
+.petals span:nth-child(7) {
+  transform: rotate(270deg) translateY(-27px);
+}
+
+.petals span:nth-child(8) {
+  transform: rotate(315deg) translateY(-27px);
+}
+
+.center {
+  position: absolute;
+  width: 31px;
+  height: 31px;
+  left: 37px;
+  top: 37px;
+  background: #f1d99f;
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow:
+    inset 0 0 0 5px #f8e9c6;
+}
+
+/* blue little flowers */
+
+.blue-flower {
+  position: absolute;
+  color: #73afd0;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  z-index: 6;
+  animation: littleFlower 3s ease-in-out infinite;
+}
+
+.blue-one {
+  left: 10px;
+  top: 103px;
+}
+
+.blue-two {
+  left: 78px;
+  top: 24px;
+  font-size: 24px;
+  animation-delay: .5s;
+}
+
+.blue-three {
+  right: 8px;
+  top: 102px;
+  font-size: 29px;
+  animation-delay: 1s;
+}
+
+.blue-four {
+  right: 76px;
+  top: 39px;
+  font-size: 23px;
+  animation-delay: 1.5s;
+}
+
+.blue-five {
+  left: 48px;
+  top: 135px;
+  font-size: 19px;
+  animation-delay: .8s;
+}
+
+.blue-six {
+  right: 48px;
+  top: 136px;
+  font-size: 19px;
+  animation-delay: 1.2s;
+}
+
+/* stems */
+
+.stems {
+  position: absolute;
+  width: 145px;
+  height: 125px;
+  left: 92px;
+  top: 130px;
+  z-index: 1;
+}
+
+.stems span {
+  position: absolute;
+  width: 5px;
+  height: 125px;
+  background: #82af8c;
+  border-radius: 10px;
+  left: 70px;
+  top: 0;
+  transform-origin: top;
+}
+
+.stems span:nth-child(1) {
+  transform: rotate(-20deg);
+}
+
+.stems span:nth-child(2) {
+  transform: rotate(-4deg);
+}
+
+.stems span:nth-child(3) {
+  transform: rotate(13deg);
+}
+
+.stems span:nth-child(4) {
+  transform: rotate(25deg);
+}
+
+/* leaves */
+
+.leaf {
+  position: absolute;
+  width: 30px;
+  height: 14px;
+  background: #8dbb98;
+  border-radius: 100% 0 100% 0;
+  z-index: 2;
+}
+
+.leaf-one {
+  left: 92px;
+  top: 174px;
+  transform: rotate(-28deg);
+}
+
+.leaf-two {
+  right: 89px;
+  top: 184px;
+  transform: rotate(28deg) scaleX(-1);
+}
+
+/* bouquet wrapper */
+
+.wrap {
+  position: absolute;
+  width: 142px;
+  height: 105px;
+  left: 94px;
+  top: 194px;
+  background: #d5edf9;
+  clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);
+  border-radius: 5px;
+  transform: rotate(2deg);
+  z-index: 8;
+  box-shadow: 0 8px 18px rgba(80,145,180,.12);
+}
+
+.wrap::before {
+  content: "";
+  position: absolute;
+  width: 68px;
+  height: 19px;
+  left: 37px;
+  top: 13px;
+  background: #9bc9df;
+  border-radius: 50%;
+  opacity: .65;
+}
+
+.wrap::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 5px;
+  left: 53px;
+  top: 43px;
+  background: rgba(255,255,255,.65);
+  border-radius: 999px;
+}
+
+/* final text */
+
 .flower-card {
-  animation: textIn 1.2s ease .45s both;
+  animation: textIn 1.2s ease .5s both;
 }
 
 .flower-card p {
@@ -310,51 +607,84 @@ button:active {
   color: #679bb5;
 }
 
+/* =========================
+   ANIMATIONS
+========================= */
+
 @keyframes pageIn {
+
   from {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 @keyframes bouquetIn {
+
   from {
     opacity: 0;
-    transform: translateY(45px) scale(.88);
+    transform: translateY(45px) scale(.82);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
 }
 
 @keyframes textIn {
+
   from {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 @keyframes glow {
+
   0%,100% {
     transform: scale(.95);
     opacity: .5;
   }
+
   50% {
     transform: scale(1.08);
     opacity: .8;
   }
+
 }
 
+@keyframes littleFlower {
+
+  0%,100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(4deg) translateY(-4px);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
   .page {
     padding: 25px 13px;
   }
@@ -368,59 +698,89 @@ button:active {
     max-width: 91%;
   }
 
-  .bouquet-image {
-    width: 96%;
-    max-height: 48vh;
+  .bouquet {
+    transform: scale(.84);
+    margin-top: -18px;
+    margin-bottom: -25px;
   }
 
   .main-text {
     font-size: 15px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
+<!-- MUSIC -->
 
 <audio id="music" loop>
   <source src="tapestry.mp3" type="audio/mpeg">
 </audio>
 
 
-<!-- OPENING -->
+<!-- =========================
+     OPENING
+========================= -->
 
 <section class="page active" id="opening">
-  <div class="content card" style="text-align:center">
 
-    <div class="small">for bina,</div>
+  <div class="content card">
 
-    <h1>happy birthday ♡</h1>
+    <div class="small">
+      for bina,
+    </div>
 
-    <div class="opening">
+    <h1>
+      happy birthday ♡
+    </h1>
+
+    <div class="opening-text">
+
       there are a lot of things i could say today,<br>
       but i'll just start with this.<br><br>
 
       i'm really, really glad i met you.<br><br>
 
       happy birthday, bina. ♡
+
     </div>
 
-    <button class="start-btn" onclick="startStory()">
+    <button
+      class="start-btn"
+      onclick="startStory()"
+    >
       start →
     </button>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 01 -->
+<!-- =========================
+     CHAPTER 01
+========================= -->
 
 <section class="page" id="chapter1">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 01</div>
-    <h2>where it started</h2>
-    <div class="date">12 june 2026</div>
+    <div class="chapter-number">
+      chapter 01
+    </div>
+
+    <h2>
+      where it started
+    </h2>
+
+    <div class="date">
+      12 june 2026
+    </div>
 
     <div class="chat">
 
@@ -452,32 +812,64 @@ terimakasih yaa kimiii
     </div>
 
     <div class="narration">
+
       this was where we started talking.
+
       <br><br>
+
       at first, it was just about music.
+
       <br><br>
+
       then we started talking about games, random stuff, and pretty much anything that came up.
+
       <br><br>
+
       and that's how i started getting used to having you around.
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('opening')">← back</button>
-      <button onclick="goTo('chapter2')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('opening')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter2')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 02 -->
+<!-- =========================
+     CHAPTER 02
+========================= -->
 
 <section class="page" id="chapter2">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 02</div>
-    <h2>maybe it was a confession</h2>
-    <div class="date">16 june 2026</div>
+    <div class="chapter-number">
+      chapter 02
+    </div>
+
+    <h2>
+      maybe it was a confession
+    </h2>
+
+    <div class="date">
+      16 june 2026
+    </div>
 
     <div class="chat">
 
@@ -501,28 +893,56 @@ naksir
     </div>
 
     <div class="narration">
+
       i said “naksir” like i was joking.
+
       <br><br>
+
       but honestly, i think i already liked you.
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter1')">← back</button>
-      <button onclick="goTo('chapter3')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter1')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter3')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 03 -->
+<!-- =========================
+     CHAPTER 03
+========================= -->
 
 <section class="page" id="chapter3">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 03</div>
-    <h2>can i like you?</h2>
-    <div class="date">17 june 2026</div>
+    <div class="chapter-number">
+      chapter 03
+    </div>
+
+    <h2>
+      can i like you?
+    </h2>
+
+    <div class="date">
+      17 june 2026
+    </div>
 
     <div class="chat">
 
@@ -549,28 +969,56 @@ kok ngaco jir
     </div>
 
     <div class="narration">
+
       this time, i wasn't really joking.
+
       <br><br>
+
       i actually wanted to know if i was allowed to like you.
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter2')">← back</button>
-      <button onclick="goTo('chapter4')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter2')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter4')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 04 -->
+<!-- =========================
+     CHAPTER 04
+========================= -->
 
 <section class="page" id="chapter4">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 04</div>
-    <h2>very subtle of me</h2>
-    <div class="date">18 june 2026</div>
+    <div class="chapter-number">
+      chapter 04
+    </div>
+
+    <h2>
+      very subtle of me
+    </h2>
+
+    <div class="date">
+      18 june 2026
+    </div>
 
     <div class="chat">
 
@@ -601,28 +1049,56 @@ kalo ga, yaudah
     </div>
 
     <div class="narration">
+
       i just wanted a picture of you.
+
       <br><br>
+
       very subtle of me.
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter3')">← back</button>
-      <button onclick="goTo('chapter5')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter3')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter5')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 05 -->
+<!-- =========================
+     CHAPTER 05
+========================= -->
 
 <section class="page" id="chapter5">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 05</div>
-    <h2>and then you said yes</h2>
-    <div class="date">18 june 2026</div>
+    <div class="chapter-number">
+      chapter 05
+    </div>
+
+    <h2>
+      and then you said yes
+    </h2>
+
+    <div class="date">
+      18 june 2026
+    </div>
 
     <div class="chat">
 
@@ -641,96 +1117,199 @@ iya mau
     </div>
 
     <div class="narration">
+
       wow.
+
       <br><br>
+
       looking back at this now, it still feels a little unreal.
+
       <br><br>
+
       you became my girlfriend.
+
       <br><br>
+
       and after that, our whole story began.
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter4')">← back</button>
-      <button onclick="goTo('chapter6')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter4')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter6')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 06 -->
+<!-- =========================
+     CHAPTER 06
+========================= -->
 
 <section class="page" id="chapter6">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 06</div>
-    <h2>our firsts</h2>
+    <div class="chapter-number">
+      chapter 06
+    </div>
+
+    <h2>
+      our firsts
+    </h2>
+
 
     <div class="first-item">
-      <div class="first-date">19 june 2026</div>
-      <h3>our first spotify jam</h3>
+
+      <div class="first-date">
+        19 june 2026
+      </div>
+
+      <h3>
+        our first spotify jam
+      </h3>
+
       <p>
         we were still pretty new to each other, so even just listening to the same songs felt nice. it was one of those things that made me think, oh, we're actually doing this together now.
       </p>
+
     </div>
 
+
     <div class="first-item">
-      <div class="first-date">21 june 2026</div>
-      <h3>we became tiktok moots</h3>
+
+      <div class="first-date">
+        21 june 2026
+      </div>
+
+      <h3>
+        we became tiktok moots
+      </h3>
+
       <p>
         another little thing that happened between us. nothing huge, but i remember being happy about it.
       </p>
+
     </div>
 
+
     <div class="first-item">
-      <div class="first-date">1 july 2026</div>
-      <h3>our first epep game together</h3>
+
+      <div class="first-date">
+        1 july 2026
+      </div>
+
+      <h3>
+        our first epep game together
+      </h3>
+
       <p>
         our first time playing together. i don't even remember what we did in the game anymore, but i remember being happy that i got to play with you.
       </p>
+
     </div>
 
+
     <div class="first-item">
-      <div class="first-date">30 july 2026</div>
-      <h3>our first call</h3>
+
+      <div class="first-date">
+        30 july 2026
+      </div>
+
+      <h3>
+        our first call
+      </h3>
+
       <p>
         and BHAPPP, this one changed everything WKWKWK.
+
         <br><br>
-        i got so used to hearing your voice that after that, i kept wanting to call you again. like... why was one call not enough
+
+        i got so used to hearing your voice that after that, i kept wanting to call you again. like... why was one call not enough 😭
       </p>
+
     </div>
 
+
     <div class="first-item">
-      <div class="first-date">19 september 2026</div>
-      <h3>our first nobar</h3>
+
+      <div class="first-date">
+        19 september 2026
+      </div>
+
+      <h3>
+        our first nobar
+      </h3>
+
       <p>
         this one made me really happy. after all the chats, calls, and everything else, getting to watch something together felt really nice.
       </p>
+
     </div>
+
 
     <div class="narration">
+
       there were a lot of firsts after we became us.
+
       <br><br>
+
       and i think that's what makes looking back at these dates so fun. they're small moments, but they're ours.
+
     </div>
 
+
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter5')">← back</button>
-      <button onclick="goTo('chapter7')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter5')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter7')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 07 -->
+<!-- =========================
+     CHAPTER 07
+========================= -->
 
 <section class="page" id="chapter7">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 07</div>
-    <h2>things i love about you</h2>
+    <div class="chapter-number">
+      chapter 07
+    </div>
+
+    <h2>
+      things i love about you
+    </h2>
 
     <div class="narration">
 
@@ -766,22 +1345,44 @@ iya mau
 
     </div>
 
+
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter6')">← back</button>
-      <button onclick="goTo('chapter8')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter6')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('chapter8')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- CHAPTER 08 -->
+<!-- =========================
+     CHAPTER 08
+========================= -->
 
 <section class="page" id="chapter8">
+
   <div class="content card">
 
-    <div class="chapter-number">chapter 08</div>
-    <h2>happy birthday, my love</h2>
+    <div class="chapter-number">
+      chapter 08
+    </div>
+
+    <h2>
+      happy birthday, my love
+    </h2>
 
     <div class="narration">
 
@@ -837,118 +1438,337 @@ iya mau
 
     </div>
 
+
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter7')">← back</button>
-      <button onclick="goTo('playlist')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter7')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('playlist')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- PLAYLIST -->
+<!-- =========================
+     PLAYLIST
+========================= -->
 
 <section class="page" id="playlist">
+
   <div class="content card">
 
-    <div class="chapter-number">a little something</div>
-    <h2>23 songs for bina</h2>
+    <div class="chapter-number">
+      a little something
+    </div>
+
+    <h2>
+      23 songs for bina
+    </h2>
 
     <div class="playlist-intro">
 
-      <p>oh, one more thing.</p>
+      <p>
+        oh, one more thing.
+      </p>
 
-      <p>i made something for you.</p>
+      <p>
+        i made something for you.
+      </p>
 
-      <p>23 songs for bina.</p>
+      <p>
+        23 songs for bina.
+      </p>
 
-      <p>because your birthday is on the 23rd.</p>
+      <p>
+        because your birthday is on the 23rd.
+      </p>
 
-      <p>every song here reminds me of you in some way.</p>
+      <p>
+        every song here reminds me of you in some way.
+      </p>
 
-      <p>so... press play? ♡</p>
+      <p>
+        so... press play? ♡
+      </p>
 
     </div>
 
-    <div class="song"><div class="song-number">01</div><div><div class="song-name">fallen star</div><div class="song-artist">the neighbourhood</div></div></div>
 
-    <div class="song"><div class="song-number">02</div><div><div class="song-name">compass</div><div class="song-artist">the neighbourhood</div></div></div>
+    <div class="song">
+      <div class="song-number">01</div>
+      <div>
+        <div class="song-name">fallen star</div>
+        <div class="song-artist">the neighbourhood</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">03</div><div><div class="song-name">heaven</div><div class="song-artist">the neighbourhood</div></div></div>
+    <div class="song">
+      <div class="song-number">02</div>
+      <div>
+        <div class="song-name">compass</div>
+        <div class="song-artist">the neighbourhood</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">04</div><div><div class="song-name">all i need to hear</div><div class="song-artist">the 1975</div></div></div>
+    <div class="song">
+      <div class="song-number">03</div>
+      <div>
+        <div class="song-name">heaven</div>
+        <div class="song-artist">the neighbourhood</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">05</div><div><div class="song-name">oh caroline</div><div class="song-artist">the 1975</div></div></div>
+    <div class="song">
+      <div class="song-number">04</div>
+      <div>
+        <div class="song-name">all i need to hear</div>
+        <div class="song-artist">the 1975</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">06</div><div><div class="song-name">medicine</div><div class="song-artist">the 1975</div></div></div>
+    <div class="song">
+      <div class="song-number">05</div>
+      <div>
+        <div class="song-name">oh caroline</div>
+        <div class="song-artist">the 1975</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">07</div><div><div class="song-name">sofia</div><div class="song-artist">clairo</div></div></div>
+    <div class="song">
+      <div class="song-number">06</div>
+      <div>
+        <div class="song-name">medicine</div>
+        <div class="song-artist">the 1975</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">08</div><div><div class="song-name">2 hold u</div><div class="song-artist">clairo</div></div></div>
+    <div class="song">
+      <div class="song-number">07</div>
+      <div>
+        <div class="song-name">sofia</div>
+        <div class="song-artist">clairo</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">09</div><div><div class="song-name">north</div><div class="song-artist">clairo</div></div></div>
+    <div class="song">
+      <div class="song-number">08</div>
+      <div>
+        <div class="song-name">2 hold u</div>
+        <div class="song-artist">clairo</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">10</div><div><div class="song-name">love songs</div><div class="song-artist">clairo</div></div></div>
+    <div class="song">
+      <div class="song-number">09</div>
+      <div>
+        <div class="song-name">north</div>
+        <div class="song-artist">clairo</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">11</div><div><div class="song-name">soft</div><div class="song-artist">lany</div></div></div>
+    <div class="song">
+      <div class="song-number">10</div>
+      <div>
+        <div class="song-name">love songs</div>
+        <div class="song-artist">clairo</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">12</div><div><div class="song-name">how to hold an angel</div><div class="song-artist">lany</div></div></div>
+    <div class="song">
+      <div class="song-number">11</div>
+      <div>
+        <div class="song-name">soft</div>
+        <div class="song-artist">lany</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">13</div><div><div class="song-name">nothing</div><div class="song-artist">bruno major</div></div></div>
+    <div class="song">
+      <div class="song-number">12</div>
+      <div>
+        <div class="song-name">how to hold an angel</div>
+        <div class="song-artist">lany</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">14</div><div><div class="song-name">the most beautiful thing</div><div class="song-artist">bruno major</div></div></div>
+    <div class="song">
+      <div class="song-number">13</div>
+      <div>
+        <div class="song-name">nothing</div>
+        <div class="song-artist">bruno major</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">15</div><div><div class="song-name">easily</div><div class="song-artist">bruno major</div></div></div>
+    <div class="song">
+      <div class="song-number">14</div>
+      <div>
+        <div class="song-name">the most beautiful thing</div>
+        <div class="song-artist">bruno major</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">16</div><div><div class="song-name">hold me down</div><div class="song-artist">daniel caesar</div></div></div>
+    <div class="song">
+      <div class="song-number">15</div>
+      <div>
+        <div class="song-name">sweater weather</div>
+        <div class="song-artist">the neighbourhood</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">17</div><div><div class="song-name">blessed</div><div class="song-artist">daniel caesar</div></div></div>
+    <div class="song">
+      <div class="song-number">16</div>
+      <div>
+        <div class="song-name">hold me down</div>
+        <div class="song-artist">daniel caesar</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">18</div><div><div class="song-name">we find love</div><div class="song-artist">daniel caesar</div></div></div>
+    <div class="song">
+      <div class="song-number">17</div>
+      <div>
+        <div class="song-name">blessed</div>
+        <div class="song-artist">daniel caesar</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">19</div><div><div class="song-name">keep on loving you</div><div class="song-artist">cigarettes after sex</div></div></div>
+    <div class="song">
+      <div class="song-number">18</div>
+      <div>
+        <div class="song-name">we find love</div>
+        <div class="song-artist">daniel caesar</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">20</div><div><div class="song-name">dark red</div><div class="song-artist">steve lacy</div></div></div>
+    <div class="song">
+      <div class="song-number">19</div>
+      <div>
+        <div class="song-name">keep on loving you</div>
+        <div class="song-artist">cigarettes after sex</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">21</div><div><div class="song-name">soft spot</div><div class="song-artist">keshi</div></div></div>
+    <div class="song">
+      <div class="song-number">20</div>
+      <div>
+        <div class="song-name">dark red</div>
+        <div class="song-artist">steve lacy</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">22</div><div><div class="song-name">i choose you</div><div class="song-artist">keshi</div></div></div>
+    <div class="song">
+      <div class="song-number">21</div>
+      <div>
+        <div class="song-name">soft spot</div>
+        <div class="song-artist">keshi</div>
+      </div>
+    </div>
 
-    <div class="song"><div class="song-number">23</div><div><div class="song-name">panasea</div><div class="song-artist">rumahsakit</div></div></div>
+    <div class="song">
+      <div class="song-number">22</div>
+      <div>
+        <div class="song-name">i choose you</div>
+        <div class="song-artist">keshi</div>
+      </div>
+    </div>
+
+    <div class="song">
+      <div class="song-number">23</div>
+      <div>
+        <div class="song-name">panasea</div>
+        <div class="song-artist">rumahsakit</div>
+      </div>
+    </div>
+
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('chapter8')">← back</button>
-      <button onclick="goTo('ending')">next →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('chapter8')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="goTo('ending')"
+      >
+        next →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- ENDING -->
+<!-- =========================
+     ENDING
+========================= -->
 
 <section class="page" id="ending">
-  <div class="content card" style="text-align:center">
 
-    <div class="small">that's it.</div>
+  <div
+    class="content card"
+    style="text-align:center"
+  >
 
-    <h2>23 songs, just for you.</h2>
+    <div class="small">
+      that's it.
+    </div>
+
+    <h2>
+      23 songs, just for you.
+    </h2>
 
     <div class="ending-text">
-      <p>happy birthday, bina.</p>
-      <p>i hope you know how loved you are. ♡</p>
+
+      <p>
+        happy birthday, bina.
+      </p>
+
+      <p>
+        i hope you know how loved you are. ♡
+      </p>
+
     </div>
 
     <div class="nav">
-      <button class="back-btn" onclick="goTo('playlist')">← back</button>
-      <button onclick="showFlowers()">one last thing →</button>
+
+      <button
+        class="back-btn"
+        onclick="goTo('playlist')"
+      >
+        ← back
+      </button>
+
+      <button
+        onclick="showFlowers()"
+      >
+        one last thing →
+      </button>
+
     </div>
 
   </div>
+
 </section>
 
 
-<!-- FINAL SURPRISE -->
+<!-- =========================
+     FINAL FLOWER SURPRISE
+========================= -->
 
 <section id="flower-surprise">
 
@@ -956,37 +1776,175 @@ iya mau
 
   <div class="flower-content">
 
-    <img
-      src="abby-bouquet.png"
-      alt="abby furai holding a bouquet of three white gerberas and blue flowers"
-      class="bouquet-image"
-    >
+
+    <!-- BOUQUET -->
+
+    <div class="bouquet">
+
+      <div class="flowers">
+
+
+        <!-- GERBERA 1 -->
+
+        <div class="flower flower-one">
+
+          <div class="petals">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+          <div class="center"></div>
+
+        </div>
+
+
+        <!-- GERBERA 2 -->
+
+        <div class="flower flower-two">
+
+          <div class="petals">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+          <div class="center"></div>
+
+        </div>
+
+
+        <!-- GERBERA 3 -->
+
+        <div class="flower flower-three">
+
+          <div class="petals">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+          <div class="center"></div>
+
+        </div>
+
+
+        <!-- BLUE FLOWERS -->
+
+        <div class="blue-flower blue-one">
+          ✿
+        </div>
+
+        <div class="blue-flower blue-two">
+          ✿
+        </div>
+
+        <div class="blue-flower blue-three">
+          ✿
+        </div>
+
+        <div class="blue-flower blue-four">
+          ✿
+        </div>
+
+        <div class="blue-flower blue-five">
+          ✿
+        </div>
+
+        <div class="blue-flower blue-six">
+          ✿
+        </div>
+
+
+        <!-- STEMS -->
+
+        <div class="stems">
+
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        <!-- LEAVES -->
+
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+
+
+        <!-- WRAPPER -->
+
+        <div class="wrap"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FINAL MESSAGE -->
 
     <div class="flower-card">
 
       <div class="main-text">
 
-        <p>i wish i could actually be there</p>
+        <p>
+          i wish i could actually be there
+        </p>
 
-        <p>to hand these flowers to you myself.</p>
-
-        <br>
-
-        <p>but since i can't,</p>
-
-        <p>i guess abby furai will have to do it for me.</p>
+        <p>
+          to hand these flowers to you myself.
+        </p>
 
         <br>
 
-        <p>she brought you three white flowers,</p>
+        <p>
+          but since i can't,
+        </p>
 
-        <p>and i think you already know what they mean.</p>
+        <p>
+          i guess i'll have to do it this way.
+        </p>
+
+        <br>
+
+        <p>
+          i brought you three white flowers,
+        </p>
+
+        <p>
+          and i think you already know what they mean.
+        </p>
 
       </div>
+
 
       <div class="love">
         i love you. ♡
       </div>
+
 
       <div class="birthday">
         happy birthday, sayang.
@@ -1000,6 +1958,11 @@ iya mau
 
 
 <script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
 const pages = [
   "opening",
   "chapter1",
@@ -1014,89 +1977,136 @@ const pages = [
   "ending"
 ];
 
+
 function goTo(id) {
 
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".page")
+    .forEach(page => {
+      page.classList.remove("active");
+    });
 
-  document.getElementById("flower-surprise")
+  document
+    .getElementById("flower-surprise")
     .classList.remove("active");
 
-  document.getElementById(id)
+  document
+    .getElementById(id)
     .classList.add("active");
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
+
+
+/* =========================
+   START + MUSIC
+========================= */
 
 function startStory() {
 
-  const music = document.getElementById("music");
+  const music =
+    document.getElementById("music");
 
   music.volume = 0.35;
 
   music.play().catch(() => {});
 
   goTo("chapter1");
+
 }
+
+
+/* =========================
+   FLOWER ENDING
+========================= */
 
 function showFlowers() {
 
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".page")
+    .forEach(page => {
+      page.classList.remove("active");
+    });
 
-  document.getElementById("flower-surprise")
+  document
+    .getElementById("flower-surprise")
     .classList.add("active");
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
+
 }
 
-document.addEventListener("keydown", function(event) {
 
-  if (
-    event.target.tagName === "INPUT" ||
-    event.target.tagName === "TEXTAREA"
-  ) {
-    return;
-  }
+/* =========================
+   KEYBOARD ARROWS
+========================= */
 
-  const activePage =
-    document.querySelector(".page.active");
-
-  if (!activePage) return;
-
-  const currentIndex =
-    pages.indexOf(activePage.id);
-
-  if (event.key === "ArrowRight") {
+document.addEventListener(
+  "keydown",
+  function(event) {
 
     if (
-      currentIndex >= 0 &&
-      currentIndex < pages.length - 1
+      event.target.tagName === "INPUT" ||
+      event.target.tagName === "TEXTAREA"
     ) {
-      goTo(pages[currentIndex + 1]);
+      return;
     }
 
-    else if (activePage.id === "ending") {
-      showFlowers();
+    const activePage =
+      document.querySelector(".page.active");
+
+    if (!activePage) return;
+
+    const currentIndex =
+      pages.indexOf(activePage.id);
+
+
+    if (event.key === "ArrowRight") {
+
+      if (
+        currentIndex >= 0 &&
+        currentIndex < pages.length - 1
+      ) {
+
+        goTo(
+          pages[currentIndex + 1]
+        );
+
+      }
+
+      else if (
+        activePage.id === "ending"
+      ) {
+
+        showFlowers();
+
+      }
+
     }
+
+
+    if (event.key === "ArrowLeft") {
+
+      if (currentIndex > 0) {
+
+        goTo(
+          pages[currentIndex - 1]
+        );
+
+      }
+
+    }
+
   }
+);
 
-  if (event.key === "ArrowLeft") {
-
-    if (currentIndex > 0) {
-      goTo(pages[currentIndex - 1]);
-    }
-  }
-
-});
 </script>
 
 </body>
