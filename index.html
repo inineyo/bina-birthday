@@ -8,1318 +8,1095 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Schoolbell&display=swap" rel="stylesheet">
 
 <style>
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background: #eaf7ff;
-    color: #31556d;
-    font-family: "Nunito", sans-serif;
-}
-
-button {
-    font-family: "Nunito", sans-serif;
+  margin: 0;
+  background: #eaf7ff;
+  color: #587b8e;
+  font-family: "Nunito", sans-serif;
 }
 
 .page {
-    min-height: 100vh;
-    display: none;
-    padding: 55px 20px 80px;
+  min-height: 100vh;
+  display: none;
+  padding: 45px 18px;
+  align-items: center;
+  justify-content: center;
 }
 
 .page.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: pageIn .55s ease;
+  display: flex;
+  animation: pageIn .6s ease;
 }
-
-@keyframes pageIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* opening */
-
-#opening {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
-}
-
-.opening-box {
-    width: 100%;
-    max-width: 620px;
-    text-align: center;
-}
-
-.opening-small {
-    font-family: "Schoolbell", cursive;
-    font-size: 24px;
-    color: #75a9c7;
-    margin-bottom: 18px;
-}
-
-.opening-title {
-    font-family: "Fredoka", sans-serif;
-    font-size: clamp(45px, 10vw, 78px);
-    font-weight: 500;
-    color: #477e9e;
-    line-height: 1;
-    margin: 0 0 25px;
-}
-
-.opening-text {
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-.start-btn {
-    border: 0;
-    background: #a9d8ef;
-    color: #31556d;
-    padding: 13px 25px;
-    border-radius: 18px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.start-btn:hover {
-    transform: translateY(-2px);
-    background: #9dcee5;
-}
-
-/* content */
 
 .content {
-    width: 100%;
-    max-width: 720px;
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,.88);
+  border-radius: 28px;
+  padding: 40px 32px;
+  box-shadow: 0 12px 35px rgba(74,145,181,.12);
+}
+
+h1,
+h2 {
+  font-family: "Fredoka", sans-serif;
+  color: #4d91b8;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(40px, 10vw, 65px);
+  margin: 8px 0 18px;
+}
+
+h2 {
+  font-size: clamp(30px, 7vw, 45px);
+  margin: 5px 0 10px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.small,
+.chapter-number,
+.first-date {
+  font-family: "Schoolbell", cursive;
+  color: #76abc6;
+}
+
+.small {
+  font-size: 19px;
 }
 
 .chapter-number {
-    font-family: "Schoolbell", cursive;
-    color: #79abc7;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.chapter-title {
-    font-family: "Fredoka", sans-serif;
-    font-size: clamp(34px, 8vw, 52px);
-    font-weight: 500;
-    color: #477e9e;
-    margin: 0 0 8px;
+  font-size: 19px;
 }
 
 .date {
-    font-family: "Schoolbell", cursive;
-    color: #82aec5;
-    font-size: 19px;
-    margin-bottom: 30px;
+  color: #8caab8;
+  font-size: 14px;
+  margin-bottom: 28px;
 }
 
-.text {
-    font-size: 16px;
-    line-height: 1.85;
+.opening {
+  text-align: center;
+  line-height: 2;
+  font-size: 17px;
 }
 
-.text p {
-    margin: 0 0 22px;
+button {
+  border: none;
+  border-radius: 999px;
+  background: #b9e2f5;
+  color: #477f9e;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 21px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+button:hover {
+  background: #a8daf1;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+.start-btn {
+  margin-top: 22px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.back-btn {
+  background: #f4fbfe;
 }
 
 /* chat */
 
 .chat {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .message {
-    max-width: 82%;
-    padding: 12px 15px;
-    border-radius: 17px;
-    font-family: "Comic Neue", cursive;
-    font-size: 16px;
-    line-height: 1.55;
-    white-space: pre-line;
+  max-width: 84%;
+  padding: 13px 17px;
+  border-radius: 18px;
+  font-family: "Comic Neue", cursive;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: pre-line;
 }
 
-.message .name {
-    font-family: "Nunito", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #6791a8;
+.name {
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: .65;
+  margin-bottom: 4px;
 }
 
 .bina {
-    align-self: flex-start;
-    background: white;
-    border: 1px solid #d5edf9;
-    border-bottom-left-radius: 5px;
+  align-self: flex-start;
+  background: #edf9ff;
+  border-bottom-left-radius: 5px;
 }
 
 .neyo {
-    align-self: flex-end;
-    background: #ccecff;
-    border-bottom-right-radius: 5px;
+  align-self: flex-end;
+  background: #cfeeff;
+  border-bottom-right-radius: 5px;
 }
 
-/* little highlight */
-
-.highlight {
-    background: linear-gradient(
-        transparent 58%,
-        #bde6f7 58%,
-        #bde6f7 88%,
-        transparent 88%
-    );
+.narration {
+  margin-top: 28px;
+  color: #648494;
+  line-height: 1.85;
 }
 
-/* navigation */
+/* firsts */
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-top: 45px;
+.first-item {
+  padding-left: 17px;
+  border-left: 3px solid #b9e2f5;
+  margin-bottom: 28px;
 }
 
-.nav-btn {
-    border: 1px solid #b9ddec;
-    background: white;
-    color: #477e9e;
-    padding: 11px 18px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: .2s ease;
+.first-date {
+  font-size: 20px;
 }
 
-.nav-btn:hover {
-    background: #dff3fc;
-    transform: translateY(-2px);
-}
-
-.nav-btn.next {
-    background: #b9e2f5;
-}
-
-.progress {
-    color: #8db4c8;
-    font-family: "Schoolbell", cursive;
-    font-size: 17px;
+.first-item h3 {
+  margin: 5px 0 7px;
+  color: #4f829d;
 }
 
 /* playlist */
 
-.playlist {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
+.playlist-intro {
+  margin-bottom: 28px;
 }
 
 .song {
-    background: white;
-    border: 1px solid #d7edf7;
-    border-radius: 14px;
-    padding: 12px 15px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #dceff7;
 }
 
 .song-number {
-    color: #9ab9c9;
-    min-width: 25px;
+  width: 30px;
+  color: #88b6cc;
+  font-family: "Schoolbell", cursive;
+  font-size: 18px;
 }
 
-.song-title {
-    flex: 1;
+.song-name {
+  font-weight: 700;
+  color: #4e7e94;
 }
 
 .song-artist {
-    color: #91adbb;
+  color: #8da4af;
+  font-size: 13px;
 }
 
-/* ending */
+/* final flower */
 
-.final {
-    text-align: center;
+#flower-surprise {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px 18px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      #eefaff 45%,
+      #d5f0ff 100%
+    );
 }
 
-.final-heart {
-    font-size: 38px;
-    margin-bottom: 15px;
+#flower-surprise.active {
+  display: flex;
+  animation: pageIn .9s ease;
 }
 
-.final h1 {
-    font-family: "Fredoka", sans-serif;
-    font-weight: 500;
-    color: #477e9e;
-    font-size: 45px;
+.blue-glow {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: rgba(158,220,249,.28);
+  filter: blur(55px);
+  animation: glow 4s ease-in-out infinite;
 }
 
-.final p {
-    line-height: 1.8;
-    font-size: 17px;
+.flower-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
 }
 
-/* floating little things */
-
-.float {
-    position: fixed;
-    pointer-events: none;
-    color: #9fd2ea;
-    opacity: .45;
-    animation: floatAround 5s ease-in-out infinite;
+.bouquet-image {
+  width: min(92%, 530px);
+  max-height: 55vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 18px 28px rgba(72,145,184,.2));
+  animation: bouquetIn 1.5s cubic-bezier(.2,.8,.2,1);
 }
 
-.f1 {
-    top: 12%;
-    left: 8%;
-    font-size: 20px;
+.flower-card {
+  animation: textIn 1.2s ease .45s both;
 }
 
-.f2 {
-    top: 25%;
-    right: 9%;
-    font-size: 15px;
-    animation-delay: 1s;
+.flower-card p {
+  margin: 3px 0;
 }
 
-.f3 {
-    bottom: 15%;
-    left: 12%;
-    font-size: 14px;
-    animation-delay: 2s;
+.main-text {
+  color: #5d7d8d;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
-.f4 {
-    bottom: 22%;
-    right: 12%;
-    font-size: 19px;
-    animation-delay: 3s;
+.love {
+  margin-top: 15px;
+  font-family: "Schoolbell", cursive;
+  font-size: 29px;
+  color: #4d91b8;
 }
 
-@keyframes floatAround {
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
-    }
+.birthday {
+  margin-top: 12px;
+  font-family: "Schoolbell", cursive;
+  font-size: 23px;
+  color: #679bb5;
+}
 
-    50% {
-        transform: translateY(-12px) rotate(5deg);
-    }
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bouquetIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes textIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%,100% {
+    transform: scale(.95);
+    opacity: .5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: .8;
+  }
 }
 
 @media (max-width: 600px) {
+  .page {
+    padding: 25px 13px;
+  }
 
-    .page {
-        padding: 40px 18px 60px;
-    }
+  .card {
+    padding: 30px 20px;
+    border-radius: 23px;
+  }
 
-    .message {
-        max-width: 90%;
-    }
+  .message {
+    max-width: 91%;
+  }
 
-    .song {
-        align-items: flex-start;
-    }
+  .bouquet-image {
+    width: 96%;
+    max-height: 48vh;
+  }
 
-    .song-artist {
-        text-align: right;
-    }
-
-    .navigation {
-        margin-top: 35px;
-    }
-
-    .nav-btn {
-        padding: 10px 14px;
-    }
-
+  .main-text {
+    font-size: 15px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
 <audio id="music" loop>
-    <source src="tapestry.mp3" type="audio/mpeg">
+  <source src="tapestry.mp3" type="audio/mpeg">
 </audio>
-
-<div class="float f1">♡</div>
-<div class="float f2">✦</div>
-<div class="float f3">♡</div>
-<div class="float f4">✧</div>
 
 
 <!-- OPENING -->
 
-<section id="opening">
+<section class="page active" id="opening">
+  <div class="content card" style="text-align:center">
 
-    <div class="opening-box">
+    <div class="small">for bina,</div>
 
-        <div class="opening-small">for bina,</div>
+    <h1>happy birthday ♡</h1>
 
-        <h1 class="opening-title">
-            happy birthday ♡
-        </h1>
+    <div class="opening">
+      there are a lot of things i could say today,<br>
+      but i'll just start with this.<br><br>
 
-        <div class="opening-text">
-            there are a lot of things i could say today,<br>
-            but i'll just start with this.<br><br>
+      i'm really, really glad i met you.<br><br>
 
-            i'm really, really glad i met you.<br><br>
-
-            happy birthday, bina. ♡
-        </div>
-
-        <button class="start-btn" onclick="startWebsite()">
-            start →
-        </button>
-
+      happy birthday, bina. ♡
     </div>
 
+    <button class="start-btn" onclick="startStory()">
+      start →
+    </button>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 01 -->
 
 <section class="page" id="chapter1">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 01</div>
+    <h2>where it started</h2>
+    <div class="date">12 june 2026</div>
 
-        <div class="chapter-number">chapter 01</div>
+    <div class="chat">
 
-        <h1 class="chapter-title">where it started</h1>
+      <div class="message bina">
+        <span class="name">bina</span>
+hi cipcip
+      </div>
 
-        <div class="date">12 june 2026</div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+oh, haiii kimi
+sorry aku mau nanya, aku habis stalk akun kamu, terus liat bisa add music
+itu gimana yaa? sorry kudet... uhd lama ga menyelam tele
+      </div>
 
-        <div class="chat">
+      <div class="message bina">
+        <span class="name">bina</span>
+kamu masukin musiknya ke roomchat dulu, play musiknya nah klik di bagian atas terus add to profile dehh
+      </div>
 
-            <div class="message bina">
-                <div class="name">bina</div>
-                hi cipcip
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                oh, haiii kimi
-                sorry aku mau nanya, aku habis stalk akun kamu, terus liat bisa add music
-                itu gimana yaa? sorry kudet... uhd lama ga menyelam tele
-            </div>
-
-            <div class="message bina">
-                <div class="name">bina</div>
-                kamu masukin musiknya ke roomchat dulu, play musiknya nah klik di bagian atas terus add to profile dehh
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                OH OKAY
-                aku coba dulu
-                oh iya bisa AHAHAHAHA
-                terimakasih yaa kimiii
-            </div>
-
-        </div>
-
-        <div class="text">
-
-            <p>
-                this was where we started talking.
-            </p>
-
-            <p>
-                at first, it was just about music.
-            </p>
-
-            <p>
-                then we started talking about games, random stuff, and pretty much anything that came up.
-            </p>
-
-            <p>
-                and that's how i started getting used to having you around.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('opening')">
-                ← back
-            </button>
-
-            <div class="progress">01 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter2')">
-                next →
-            </button>
-
-        </div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+OH OKAY
+aku coba dulu
+oh iya bisa AHAHAHAHA
+terimakasih yaa kimiii
+      </div>
 
     </div>
 
+    <div class="narration">
+      this was where we started talking.
+      <br><br>
+      at first, it was just about music.
+      <br><br>
+      then we started talking about games, random stuff, and pretty much anything that came up.
+      <br><br>
+      and that's how i started getting used to having you around.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('opening')">← back</button>
+      <button onclick="goTo('chapter2')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 02 -->
 
 <section class="page" id="chapter2">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 02</div>
+    <h2>maybe it was a confession</h2>
+    <div class="date">16 june 2026</div>
 
-        <div class="chapter-number">chapter 02</div>
+    <div class="chat">
 
-        <h1 class="chapter-title">maybe it was a confession</h1>
+      <div class="message bina">
+        <span class="name">bina</span>
+*sending her cutie bang
+rate poni aku skrg
+      </div>
 
-        <div class="date">16 june 2026</div>
-
-        <div class="chat">
-
-            <div class="message bina">
-                <div class="name">bina</div>
-                *sending her cutie bang
-                rate poni aku skrg
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                lucu banget kamu
-                mwhehehehhehehe berapa ya
-                gatau ah
-                kamu lucu banget
-                lucu
-                menggemaskan
-                naksir
-            </div>
-
-        </div>
-
-        <div class="text">
-
-            <p>
-                i said “naksir” like i was joking.
-            </p>
-
-            <p>
-                but honestly, i think i already liked you.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter1')">
-                ← back
-            </button>
-
-            <div class="progress">02 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter3')">
-                next →
-            </button>
-
-        </div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+lucu banget kamu
+mwhehehehhehehe berapa ya
+gatau ah
+kamu lucu banget
+lucu
+menggemaskan
+naksir
+      </div>
 
     </div>
 
+    <div class="narration">
+      i said “naksir” like i was joking.
+      <br><br>
+      but honestly, i think i already liked you.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter1')">← back</button>
+      <button onclick="goTo('chapter3')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 03 -->
 
 <section class="page" id="chapter3">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 03</div>
+    <h2>can i like you?</h2>
+    <div class="date">17 june 2026</div>
 
-        <div class="chapter-number">chapter 03</div>
+    <div class="chat">
 
-        <h1 class="chapter-title">can i like you?</h1>
+      <div class="message bina">
+        <span class="name">bina</span>
+*sent her pretty pap
+      </div>
 
-        <div class="date">17 june 2026</div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+eh aku boleh gak naksir kamu
+      </div>
 
-        <div class="chat">
+      <div class="message bina">
+        <span class="name">bina</span>
+ngacooo
+      </div>
 
-            <div class="message bina">
-                <div class="name">bina</div>
-                *sent her pretty pap
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                eh aku boleh gak naksir kamu
-            </div>
-
-            <div class="message bina">
-                <div class="name">bina</div>
-                ngacooo
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                kok ngaco jir
-            </div>
-
-        </div>
-
-        <div class="text">
-
-            <p>
-                this time, i wasn't really joking.
-            </p>
-
-            <p>
-                i actually wanted to know if i was allowed to like you.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter2')">
-                ← back
-            </button>
-
-            <div class="progress">03 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter4')">
-                next →
-            </button>
-
-        </div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+kok ngaco jir
+      </div>
 
     </div>
 
+    <div class="narration">
+      this time, i wasn't really joking.
+      <br><br>
+      i actually wanted to know if i was allowed to like you.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter2')">← back</button>
+      <button onclick="goTo('chapter4')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 04 -->
 
 <section class="page" id="chapter4">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 04</div>
+    <h2>very subtle of me</h2>
+    <div class="date">18 june 2026</div>
 
-        <div class="chapter-number">chapter 04</div>
+    <div class="chat">
 
-        <h1 class="chapter-title">very subtle of me</h1>
+      <div class="message bina">
+        <span class="name">bina</span>
+apa ya supaya ga mual terus
+      </div>
 
-        <div class="date">18 june 2026</div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+coba
+aku liat kamu
+coba dulu ini jir, bs gak menghilangkan mual akibat kora kora
+      </div>
 
-        <div class="chat">
+      <div class="message bina">
+        <span class="name">bina</span>
+YG BNR AJ
+kalo engga gmn
+      </div>
 
-            <div class="message bina">
-                <div class="name">bina</div>
-                apa ya supaya ga mual terus
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                coba
-                aku liat kamu
-                coba dulu ini jir, bs gak menghilangkan mual akibat kora kora
-            </div>
-
-            <div class="message bina">
-                <div class="name">bina</div>
-                YG BNR AJ
-                kalo engga gmn
-            </div>
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                coba dulu
-                kalo ga, yaudah
-            </div>
-
-        </div>
-
-        <div class="text">
-
-            <p>
-                i just wanted a picture of you.
-            </p>
-
-            <p>
-                very subtle of me.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter3')">
-                ← back
-            </button>
-
-            <div class="progress">04 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter5')">
-                next →
-            </button>
-
-        </div>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+coba dulu
+kalo ga, yaudah
+      </div>
 
     </div>
 
+    <div class="narration">
+      i just wanted a picture of you.
+      <br><br>
+      very subtle of me.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter3')">← back</button>
+      <button onclick="goTo('chapter5')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 05 -->
 
 <section class="page" id="chapter5">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 05</div>
+    <h2>and then you said yes</h2>
+    <div class="date">18 june 2026</div>
 
-        <div class="chapter-number">chapter 05</div>
+    <div class="chat">
 
-        <h1 class="chapter-title">and then you said yes</h1>
+      <div class="message neyo">
+        <span class="name">neyo</span>
+jd pacarku ya
 
-        <div class="date">18 june 2026</div>
+pls
+      </div>
 
-        <div class="chat">
-
-            <div class="message neyo">
-                <div class="name">neyo</div>
-                jd pacarku ya
-                pls
-            </div>
-
-            <div class="message bina">
-                <div class="name">bina</div>
-                iya mau
-            </div>
-
-        </div>
-
-        <div class="text">
-
-            <p>
-                wow.
-            </p>
-
-            <p>
-                looking back at this now, it still feels a little unreal.
-            </p>
-
-            <p>
-                you became my girlfriend.
-            </p>
-
-            <p>
-                and after that, our whole story began.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter4')">
-                ← back
-            </button>
-
-            <div class="progress">05 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter6')">
-                next →
-            </button>
-
-        </div>
+      <div class="message bina">
+        <span class="name">bina</span>
+iya mau
+      </div>
 
     </div>
 
+    <div class="narration">
+      wow.
+      <br><br>
+      looking back at this now, it still feels a little unreal.
+      <br><br>
+      you became my girlfriend.
+      <br><br>
+      and after that, our whole story began.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter4')">← back</button>
+      <button onclick="goTo('chapter6')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 06 -->
 
 <section class="page" id="chapter6">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 06</div>
+    <h2>our firsts</h2>
 
-        <div class="chapter-number">chapter 06</div>
-
-        <h1 class="chapter-title">our firsts</h1>
-
-        <div class="text">
-
-            <p>
-                <span class="highlight">19 june 2026</span><br>
-                our first spotify jam.
-            </p>
-
-            <p>
-                we were still pretty new to each other, so even just listening to the same songs felt nice. it was one of those things that made me think, oh, we're actually doing this together now.
-            </p>
-
-            <p>
-                <span class="highlight">21 june 2026</span><br>
-                we became tiktok moots.
-            </p>
-
-            <p>
-                another little thing that happened between us. nothing huge, but i remember being happy about it.
-            </p>
-
-            <p>
-                <span class="highlight">1 july 2026</span><br>
-                our first epep game together.
-            </p>
-
-            <p>
-                our first time playing together. i don't even remember what we did in the game anymore, but i remember being happy that i got to play with you.
-            </p>
-
-            <p>
-                <span class="highlight">30 july 2026</span><br>
-                our first call.
-            </p>
-
-            <p>
-                and BHAPPP, this one changed everything WKWKWK.
-            </p>
-
-            <p>
-                i got so used to hearing your voice that after that, i kept wanting to call you again. like... why was one call not enough 😭
-            </p>
-
-            <p>
-                <span class="highlight">19 september 2026</span><br>
-                our first nobar.
-            </p>
-
-            <p>
-                this one made me really happy. after all the chats, calls, and everything else, getting to watch something together felt really nice.
-            </p>
-
-            <p>
-                there were a lot of firsts after we became us.
-            </p>
-
-            <p>
-                and i think that's what makes looking back at these dates so fun. they're small moments, but they're ours.
-            </p>
-
-        </div>
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter5')">
-                ← back
-            </button>
-
-            <div class="progress">06 / 08</div>
-
-            <button class="nav-btn next" onclick="goTo('chapter7')">
-                next →
-            </button>
-
-        </div>
-
+    <div class="first-item">
+      <div class="first-date">19 june 2026</div>
+      <h3>our first spotify jam</h3>
+      <p>
+        we were still pretty new to each other, so even just listening to the same songs felt nice. it was one of those things that made me think, oh, we're actually doing this together now.
+      </p>
     </div>
 
+    <div class="first-item">
+      <div class="first-date">21 june 2026</div>
+      <h3>we became tiktok moots</h3>
+      <p>
+        another little thing that happened between us. nothing huge, but i remember being happy about it.
+      </p>
+    </div>
+
+    <div class="first-item">
+      <div class="first-date">1 july 2026</div>
+      <h3>our first epep game together</h3>
+      <p>
+        our first time playing together. i don't even remember what we did in the game anymore, but i remember being happy that i got to play with you.
+      </p>
+    </div>
+
+    <div class="first-item">
+      <div class="first-date">30 july 2026</div>
+      <h3>our first call</h3>
+      <p>
+        and BHAPPP, this one changed everything WKWKWK.
+        <br><br>
+        i got so used to hearing your voice that after that, i kept wanting to call you again. like... why was one call not enough
+      </p>
+    </div>
+
+    <div class="first-item">
+      <div class="first-date">19 september 2026</div>
+      <h3>our first nobar</h3>
+      <p>
+        this one made me really happy. after all the chats, calls, and everything else, getting to watch something together felt really nice.
+      </p>
+    </div>
+
+    <div class="narration">
+      there were a lot of firsts after we became us.
+      <br><br>
+      and i think that's what makes looking back at these dates so fun. they're small moments, but they're ours.
+    </div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter5')">← back</button>
+      <button onclick="goTo('chapter7')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 07 -->
 
 <section class="page" id="chapter7">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 07</div>
+    <h2>things i love about you</h2>
 
-        <div class="chapter-number">chapter 07</div>
+    <div class="narration">
 
-        <h1 class="chapter-title">things i love about you</h1>
+      i think one of the first things i liked about you was how straightforward you were. you didn't try to act cool even though we had just started talking. you could just talk to me normally, and i liked that about you.
 
-        <div class="text">
+      <br><br>
 
-            <p>
-                i think one of the first things i liked about you was how straightforward you were. you didn't try to act cool even though we had just started talking. you could just talk to me normally, and i liked that about you.
-            </p>
+      the more i got to know you, the more things i started liking about you. you're funny, especially when you say “oi oi oi” to me. i love your habits, the way you call me sayang, compliment me, and tell me you love me. i love hearing those things from you.
 
-            <p>
-                the more i got to know you, the more things i started liking about you. you're funny, especially when you say “oi oi oi” to me. i love your habits, the way you call me sayang, compliment me, and tell me you love me. i love hearing those things from you.
-            </p>
+      <br><br>
 
-            <p>
-                i love how you take care of me too. you listen whenever i have something to say, even when i'm just complaining about something small. you never judge me for it. you just listen, and that's something i'll always appreciate.
-            </p>
+      i love how you take care of me too. you listen whenever i have something to say, even when i'm just complaining about something small. you never judge me for it. you just listen, and that's something i'll always appreciate.
 
-            <p>
-                one thing i really love about you is how you always know how to get my attention. you draw me, you remember the things i like, and you always find a way to bring up things that i love. you always know what will make me stop and pay attention, and i really like that about you.
-            </p>
+      <br><br>
 
-            <p>
-                and i love the little ways you show that i'm important to you. i notice them, even when i don't say anything about it. and every time i do, it makes me happy.
-            </p>
+      one thing i really love about you is how you always know how to get my attention. you draw me, you remember the things i like, and you always find a way to bring up things that i love. you always know what will make me stop and pay attention, and i really like that about you.
 
-            <p>
-                i don't really know how to explain everything i love about you. i just know that when i think about why i chose you, the answer is pretty simple.
-            </p>
+      <br><br>
 
-            <p>
-                cause you're bina.
-            </p>
+      and i love the little ways you show that i'm important to you. i notice them, even when i don't say anything about it. and every time i do, it makes me happy.
 
-            <p>
-                and there's only one bina. ♡
-            </p>
+      <br><br>
 
-        </div>
+      i don't really know how to explain everything i love about you. i just know that when i think about why i chose you, the answer is pretty simple.
 
-        <div class="navigation">
+      <br><br>
 
-            <button class="nav-btn" onclick="goTo('chapter6')">
-                ← back
-            </button>
+      cause you're bina.
 
-            <div class="progress">07 / 08</div>
+      <br><br>
 
-            <button class="nav-btn next" onclick="goTo('chapter8')">
-                next →
-            </button>
-
-        </div>
+      and there's only one bina. ♡
 
     </div>
 
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter6')">← back</button>
+      <button onclick="goTo('chapter8')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- CHAPTER 08 -->
 
 <section class="page" id="chapter8">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">chapter 08</div>
+    <h2>happy birthday, my love</h2>
 
-        <div class="chapter-number">chapter 08</div>
+    <div class="narration">
 
-        <h1 class="chapter-title">happy birthday, my love</h1>
+      i don't really know where to start, because even after everything i've written about you, i still feel like there's so much more i want to say.
 
-        <div class="text">
+      <br><br>
 
-            <p>
-                i don't really know where to start, because even after everything i've written about you, i still feel like there's so much more i want to say.
-            </p>
+      i'm really happy i met you, bina. we started with something so simple, just talking about music and random things, until you became someone i look for every day. now, i can't really imagine going through a whole day without talking to you.
 
-            <p>
-                i'm really happy i met you, bina. we started with something so simple, just talking about music and random things, until you became someone i look for every day. now, i can't really imagine going through a whole day without talking to you.
-            </p>
+      <br><br>
 
-            <p>
-                i want to keep hearing about your day. i want to know what made you laugh, what annoyed you, what you've been thinking about, or even the most boring thing that happened. i want to hear all of it. i like knowing what's going on in your life, even when it's just something small.
-            </p>
+      i want to keep hearing about your day. i want to know what made you laugh, what annoyed you, what you've been thinking about, or even the most boring thing that happened. i want to hear all of it. i like knowing what's going on in your life, even when it's just something small.
 
-            <p>
-                i want to keep having conversations with you that go on for hours, calling you for no reason, playing games together, watching things together, laughing at things that probably aren't even that funny, and just being ourselves. i don't need anything big. i just like having you there.
-            </p>
+      <br><br>
 
-            <p>
-                and whenever you need someone, i want you to know that you can come to me. i'll listen to your stories, your complaints, your worries, everything. i might not always know what to say or how to fix things, but i'll always try to be there for you.
-            </p>
+      i want to keep having conversations with you that go on for hours, calling you for no reason, playing games together, watching things together, laughing at things that probably aren't even that funny, and just being ourselves. i don't need anything big. i just like having you there.
 
-            <p>
-                thank you for choosing me and for letting me be a part of your life. thank you for all the care you give me, for listening to me, and for making me feel loved in so many different ways.
-            </p>
+      <br><br>
 
-            <p>
-                for this new year of your life, i hope you get more reasons to be happy. i hope you get to experience things you've been waiting for, reach the goals you've been working on, and meet people who always treat you with the kindness you deserve.
-            </p>
+      and whenever you need someone, i want you to know that you can come to me. i'll listen to your stories, your complaints, your worries, everything. i might not always know what to say or how to fix things, but i'll always try to be there for you.
 
-            <p>
-                i hope you become more confident in yourself and in the things you can do. i hope you never feel like you have to be perfect to be loved or appreciated. i hope you keep growing into the person you want to be, at your own pace.
-            </p>
+      <br><br>
 
-            <p>
-                when things get hard, i hope you remember that you don't have to handle everything alone. i hope you always have someone to listen to you, support you, and remind you that you're doing better than you think.
-            </p>
+      thank you for choosing me and for letting me be a part of your life. thank you for all the care you give me, for listening to me, and for making me feel loved in so many different ways.
 
-            <p>
-                most of all, i hope you're happy. not just today because it's your birthday, but on ordinary days too. i hope there are more days where you wake up excited about something, laugh until your stomach hurts, and go to sleep feeling like it was a good day.
-            </p>
+      <br><br>
 
-            <p>
-                and selfishly, i hope i get to be there for a lot of those days.
-            </p>
+      for this new year of your life, i hope you get more reasons to be happy. i hope you get to experience things you've been waiting for, reach the goals you've been working on, and meet people who always treat you with the kindness you deserve.
 
-            <p>
-                happy birthday, bina.
-            </p>
+      <br><br>
 
-            <p>
-                i love you. ♡
-            </p>
+      i hope you become more confident in yourself and in the things you can do. i hope you never feel like you have to be perfect to be loved or appreciated. i hope you keep growing into the person you want to be, at your own pace.
 
-        </div>
+      <br><br>
 
-        <div class="navigation">
+      when things get hard, i hope you remember that you don't have to handle everything alone. i hope you always have someone to listen to you, support you, and remind you that you're doing better than you think.
 
-            <button class="nav-btn" onclick="goTo('chapter7')">
-                ← back
-            </button>
+      <br><br>
 
-            <div class="progress">08 / 08</div>
+      most of all, i hope you're happy. not just today because it's your birthday, but on ordinary days too. i hope there are more days where you wake up excited about something, laugh until your stomach hurts, and go to sleep feeling like it was a good day.
 
-            <button class="nav-btn next" onclick="goTo('playlist')">
-                next →
-            </button>
+      <br><br>
 
-        </div>
+      and selfishly, i hope i get to be there for a lot of those days.
+
+      <br><br>
+
+      happy birthday, bina.
+
+      <br><br>
+
+      i love you. ♡
 
     </div>
 
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter7')">← back</button>
+      <button onclick="goTo('playlist')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- PLAYLIST -->
 
 <section class="page" id="playlist">
+  <div class="content card">
 
-    <div class="content">
+    <div class="chapter-number">a little something</div>
+    <h2>23 songs for bina</h2>
 
-        <div class="chapter-number">one more thing</div>
+    <div class="playlist-intro">
 
-        <h1 class="chapter-title">23 songs for bina</h1>
+      <p>oh, one more thing.</p>
 
-        <div class="text">
+      <p>i made something for you.</p>
 
-            <p>
-                i made something for you.
-            </p>
+      <p>23 songs for bina.</p>
 
-            <p>
-                because your birthday is on the 23rd.
-            </p>
+      <p>because your birthday is on the 23rd.</p>
 
-            <p>
-                every song here reminds me of you in some way.
-            </p>
+      <p>every song here reminds me of you in some way.</p>
 
-            <p>
-                so... press play? ♡
-            </p>
-
-        </div>
-
-
-        <div class="playlist">
-
-            <div class="song">
-                <span class="song-number">01</span>
-                <span class="song-title">fallen star</span>
-                <span class="song-artist">the neighbourhood</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">02</span>
-                <span class="song-title">compass</span>
-                <span class="song-artist">the neighbourhood</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">03</span>
-                <span class="song-title">heaven</span>
-                <span class="song-artist">the neighbourhood</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">04</span>
-                <span class="song-title">all i need to hear</span>
-                <span class="song-artist">the 1975</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">05</span>
-                <span class="song-title">oh caroline</span>
-                <span class="song-artist">the 1975</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">06</span>
-                <span class="song-title">medicine</span>
-                <span class="song-artist">the 1975</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">07</span>
-                <span class="song-title">sofia</span>
-                <span class="song-artist">clairo</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">08</span>
-                <span class="song-title">2 hold u</span>
-                <span class="song-artist">clairo</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">09</span>
-                <span class="song-title">north</span>
-                <span class="song-artist">clairo</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">10</span>
-                <span class="song-title">love songs</span>
-                <span class="song-artist">clairo</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">11</span>
-                <span class="song-title">soft</span>
-                <span class="song-artist">lany</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">12</span>
-                <span class="song-title">how to hold an angel</span>
-                <span class="song-artist">lany</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">13</span>
-                <span class="song-title">nothing</span>
-                <span class="song-artist">bruno major</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">14</span>
-                <span class="song-title">the most beautiful thing</span>
-                <span class="song-artist">bruno major</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">15</span>
-                <span class="song-title">easily</span>
-                <span class="song-artist">bruno major</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">16</span>
-                <span class="song-title">hold me down</span>
-                <span class="song-artist">daniel caesar</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">17</span>
-                <span class="song-title">blessed</span>
-                <span class="song-artist">daniel caesar</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">18</span>
-                <span class="song-title">we find love</span>
-                <span class="song-artist">daniel caesar</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">19</span>
-                <span class="song-title">keep on loving you</span>
-                <span class="song-artist">cigarettes after sex</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">20</span>
-                <span class="song-title">dark red</span>
-                <span class="song-artist">steve lacy</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">21</span>
-                <span class="song-title">soft spot</span>
-                <span class="song-artist">keshi</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">22</span>
-                <span class="song-title">i choose you</span>
-                <span class="song-artist">keshi</span>
-            </div>
-
-            <div class="song">
-                <span class="song-number">23</span>
-                <span class="song-title">panasea</span>
-                <span class="song-artist">rumahsakit</span>
-            </div>
-
-        </div>
-
-
-        <div class="navigation">
-
-            <button class="nav-btn" onclick="goTo('chapter8')">
-                ← back
-            </button>
-
-            <div class="progress">♡</div>
-
-            <button class="nav-btn next" onclick="goTo('ending')">
-                next →
-            </button>
-
-        </div>
+      <p>so... press play? ♡</p>
 
     </div>
 
+    <div class="song"><div class="song-number">01</div><div><div class="song-name">fallen star</div><div class="song-artist">the neighbourhood</div></div></div>
+
+    <div class="song"><div class="song-number">02</div><div><div class="song-name">compass</div><div class="song-artist">the neighbourhood</div></div></div>
+
+    <div class="song"><div class="song-number">03</div><div><div class="song-name">heaven</div><div class="song-artist">the neighbourhood</div></div></div>
+
+    <div class="song"><div class="song-number">04</div><div><div class="song-name">all i need to hear</div><div class="song-artist">the 1975</div></div></div>
+
+    <div class="song"><div class="song-number">05</div><div><div class="song-name">oh caroline</div><div class="song-artist">the 1975</div></div></div>
+
+    <div class="song"><div class="song-number">06</div><div><div class="song-name">medicine</div><div class="song-artist">the 1975</div></div></div>
+
+    <div class="song"><div class="song-number">07</div><div><div class="song-name">sofia</div><div class="song-artist">clairo</div></div></div>
+
+    <div class="song"><div class="song-number">08</div><div><div class="song-name">2 hold u</div><div class="song-artist">clairo</div></div></div>
+
+    <div class="song"><div class="song-number">09</div><div><div class="song-name">north</div><div class="song-artist">clairo</div></div></div>
+
+    <div class="song"><div class="song-number">10</div><div><div class="song-name">love songs</div><div class="song-artist">clairo</div></div></div>
+
+    <div class="song"><div class="song-number">11</div><div><div class="song-name">soft</div><div class="song-artist">lany</div></div></div>
+
+    <div class="song"><div class="song-number">12</div><div><div class="song-name">how to hold an angel</div><div class="song-artist">lany</div></div></div>
+
+    <div class="song"><div class="song-number">13</div><div><div class="song-name">nothing</div><div class="song-artist">bruno major</div></div></div>
+
+    <div class="song"><div class="song-number">14</div><div><div class="song-name">the most beautiful thing</div><div class="song-artist">bruno major</div></div></div>
+
+    <div class="song"><div class="song-number">15</div><div><div class="song-name">easily</div><div class="song-artist">bruno major</div></div></div>
+
+    <div class="song"><div class="song-number">16</div><div><div class="song-name">hold me down</div><div class="song-artist">daniel caesar</div></div></div>
+
+    <div class="song"><div class="song-number">17</div><div><div class="song-name">blessed</div><div class="song-artist">daniel caesar</div></div></div>
+
+    <div class="song"><div class="song-number">18</div><div><div class="song-name">we find love</div><div class="song-artist">daniel caesar</div></div></div>
+
+    <div class="song"><div class="song-number">19</div><div><div class="song-name">keep on loving you</div><div class="song-artist">cigarettes after sex</div></div></div>
+
+    <div class="song"><div class="song-number">20</div><div><div class="song-name">dark red</div><div class="song-artist">steve lacy</div></div></div>
+
+    <div class="song"><div class="song-number">21</div><div><div class="song-name">soft spot</div><div class="song-artist">keshi</div></div></div>
+
+    <div class="song"><div class="song-number">22</div><div><div class="song-name">i choose you</div><div class="song-artist">keshi</div></div></div>
+
+    <div class="song"><div class="song-number">23</div><div><div class="song-name">panasea</div><div class="song-artist">rumahsakit</div></div></div>
+
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('chapter8')">← back</button>
+      <button onclick="goTo('ending')">next →</button>
+    </div>
+
+  </div>
 </section>
 
 
 <!-- ENDING -->
 
 <section class="page" id="ending">
+  <div class="content card" style="text-align:center">
 
-    <div class="content final">
+    <div class="small">that's it.</div>
 
-        <div class="final-heart">♡</div>
+    <h2>23 songs, just for you.</h2>
 
-        <h1>that's it.</h1>
+    <div class="ending-text">
+      <p>happy birthday, bina.</p>
+      <p>i hope you know how loved you are. ♡</p>
+    </div>
 
-        <div class="text">
+    <div class="nav">
+      <button class="back-btn" onclick="goTo('playlist')">← back</button>
+      <button onclick="showFlowers()">one last thing →</button>
+    </div>
 
-            <p>
-                23 songs, just for you.
-            </p>
+  </div>
+</section>
 
-            <p>
-                happy birthday, bina.
-            </p>
 
-            <p>
-                i hope you know how loved you are. ♡
-            </p>
+<!-- FINAL SURPRISE -->
 
-        </div>
+<section id="flower-surprise">
 
-        <div class="navigation">
+  <div class="blue-glow"></div>
 
-            <button class="nav-btn" onclick="goTo('playlist')">
-                ← back
-            </button>
+  <div class="flower-content">
 
-            <div class="progress">the end ♡</div>
+    <img
+      src="abby-bouquet.png"
+      alt="abby furai holding a bouquet of three white gerberas and blue flowers"
+      class="bouquet-image"
+    >
 
-            <button class="nav-btn" onclick="goTo('opening')">
-                start again
-            </button>
+    <div class="flower-card">
 
-        </div>
+      <div class="main-text">
+
+        <p>i wish i could actually be there</p>
+
+        <p>to hand these flowers to you myself.</p>
+
+        <br>
+
+        <p>but since i can't,</p>
+
+        <p>i guess abby furai will have to do it for me.</p>
+
+        <br>
+
+        <p>she brought you three white flowers,</p>
+
+        <p>and i think you already know what they mean.</p>
+
+      </div>
+
+      <div class="love">
+        i love you. ♡
+      </div>
+
+      <div class="birthday">
+        happy birthday, sayang.
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 
 <script>
+const pages = [
+  "opening",
+  "chapter1",
+  "chapter2",
+  "chapter3",
+  "chapter4",
+  "chapter5",
+  "chapter6",
+  "chapter7",
+  "chapter8",
+  "playlist",
+  "ending"
+];
 
-const music = document.getElementById("music");
+function goTo(id) {
 
-const pages = document.querySelectorAll(".page");
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
 
-function startWebsite() {
+  document.getElementById("flower-surprise")
+    .classList.remove("active");
 
-    music.volume = 0.65;
+  document.getElementById(id)
+    .classList.add("active");
 
-    music.play().catch(() => {
-        console.log("music needs user interaction");
-    });
-
-    document.getElementById("opening").style.display = "none";
-
-    goTo("chapter1");
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
+function startStory() {
 
-function goTo(pageId) {
+  const music = document.getElementById("music");
 
-    pages.forEach(page => {
-        page.classList.remove("active");
-    });
+  music.volume = 0.35;
 
-    const target = document.getElementById(pageId);
+  music.play().catch(() => {});
 
-    if (target) {
-        target.classList.add("active");
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-
-    /* keep music playing when moving between chapters */
-
-    if (music.paused) {
-        music.play().catch(() => {});
-    }
+  goTo("chapter1");
 }
 
+function showFlowers() {
 
-/* keyboard navigation */
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("flower-surprise")
+    .classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
 document.addEventListener("keydown", function(event) {
 
-    if (event.key === "ArrowRight") {
+  if (
+    event.target.tagName === "INPUT" ||
+    event.target.tagName === "TEXTAREA"
+  ) {
+    return;
+  }
 
-        const current = document.querySelector(".page.active");
+  const activePage =
+    document.querySelector(".page.active");
 
-        if (current) {
+  if (!activePage) return;
 
-            const nextButton = current.querySelector(".next");
+  const currentIndex =
+    pages.indexOf(activePage.id);
 
-            if (nextButton) {
-                nextButton.click();
-            }
+  if (event.key === "ArrowRight") {
 
-        }
-
+    if (
+      currentIndex >= 0 &&
+      currentIndex < pages.length - 1
+    ) {
+      goTo(pages[currentIndex + 1]);
     }
 
-    if (event.key === "ArrowLeft") {
-
-        const current = document.querySelector(".page.active");
-
-        if (current) {
-
-            const backButton = current.querySelector(".nav-btn:first-child");
-
-            if (backButton) {
-                backButton.click();
-            }
-
-        }
-
+    else if (activePage.id === "ending") {
+      showFlowers();
     }
+  }
+
+  if (event.key === "ArrowLeft") {
+
+    if (currentIndex > 0) {
+      goTo(pages[currentIndex - 1]);
+    }
+  }
 
 });
-
 </script>
 
 </body>
