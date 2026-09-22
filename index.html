@@ -1,2113 +1,1701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>for bina ♡</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Schoolbell&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #eaf7ff;
-  color: #587b8e;
-  font-family: "Nunito", sans-serif;
-}
-
-/* =========================
-   GENERAL
-========================= */
-
-.page {
-  min-height: 100vh;
-  display: none;
-  padding: 45px 18px;
-  align-items: center;
-  justify-content: center;
-}
-
-.page.active {
-  display: flex;
-  animation: pageIn .6s ease;
-}
-
-.content {
-  width: 100%;
-  max-width: 720px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(255,255,255,.88);
-  border-radius: 28px;
-  padding: 40px 32px;
-  box-shadow: 0 12px 35px rgba(74,145,181,.12);
-}
-
-.small {
-  font-family: "Schoolbell", cursive;
-  color: #76abc6;
-  font-size: 19px;
-}
-
-h1,
-h2 {
-  font-family: "Fredoka", sans-serif;
-  color: #4d91b8;
-  font-weight: 500;
-}
-
-h1 {
-  font-size: clamp(40px, 10vw, 65px);
-  margin: 8px 0 18px;
-}
-
-h2 {
-  font-size: clamp(30px, 7vw, 45px);
-  margin: 5px 0 10px;
-}
-
-p {
-  line-height: 1.8;
-}
-
-/* =========================
-   OPENING
-========================= */
-
-#opening {
-  text-align: center;
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      #ffffff 0%,
-      #eaf8ff 45%,
-      #d8f0ff 100%
-    );
-}
-
-.opening-text {
-  font-size: 17px;
-  line-height: 2;
-  color: #587b8e;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-button {
-  border: none;
-  border-radius: 999px;
-  background: #b9e2f5;
-  color: #477f9e;
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 12px 21px;
-  cursor: pointer;
-  transition: .2s ease;
-}
-
-button:hover {
-  background: #a8daf1;
-  transform: translateY(-2px);
-}
-
-button:active {
-  transform: scale(.97);
-}
-
-.start-btn {
-  margin-top: 22px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.back-btn {
-  background: #f4fbfe;
-}
-
-/* =========================
-   CHAPTER
-========================= */
-
-.chapter-number {
-  font-family: "Schoolbell", cursive;
-  color: #76abc6;
-  font-size: 19px;
-}
-
-.date {
-  color: #8caab8;
-  font-size: 14px;
-  margin-bottom: 28px;
-}
-
-.narration {
-  margin-top: 28px;
-  color: #648494;
-  line-height: 1.85;
-}
-
-/* =========================
-   CHAT
-========================= */
-
-.chat {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.message {
-  max-width: 84%;
-  padding: 13px 17px;
-  border-radius: 18px;
-  font-family: "Comic Neue", cursive;
-  font-size: 15px;
-  line-height: 1.55;
-  white-space: pre-line;
-}
-
-.name {
-  display: block;
-  font-family: "Nunito", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  opacity: .65;
-  margin-bottom: 4px;
-}
-
-.bina {
-  align-self: flex-start;
-  background: #edf9ff;
-  border-bottom-left-radius: 5px;
-}
-
-.neyo {
-  align-self: flex-end;
-  background: #cfeeff;
-  border-bottom-right-radius: 5px;
-}
-
-/* =========================
-   FIRSTS
-========================= */
-
-.first-item {
-  padding-left: 17px;
-  border-left: 3px solid #b9e2f5;
-  margin-bottom: 28px;
-}
-
-.first-date {
-  font-family: "Schoolbell", cursive;
-  color: #76abc6;
-  font-size: 20px;
-}
-
-.first-item h3 {
-  margin: 5px 0 7px;
-  color: #4f829d;
-}
-
-/* =========================
-   PLAYLIST
-========================= */
-
-.playlist-intro {
-  margin-bottom: 28px;
-}
-
-.song {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 13px 0;
-  border-bottom: 1px solid #dceff7;
-}
-
-.song-number {
-  width: 30px;
-  color: #88b6cc;
-  font-family: "Schoolbell", cursive;
-  font-size: 18px;
-}
-
-.song-name {
-  font-weight: 700;
-  color: #4e7e94;
-}
-
-.song-artist {
-  color: #8da4af;
-  font-size: 13px;
-}
-
-/* =========================
-   ENDING
-========================= */
-
-.ending-text {
-  line-height: 2;
-}
-
-/* =========================
-   FLOWER SURPRISE
-========================= */
-
-#flower-surprise {
-  min-height: 100vh;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 35px 18px;
-  position: relative;
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #ffffff 0%,
-      #eefaff 45%,
-      #d5f0ff 100%
-    );
-}
-
-#flower-surprise.active {
-  display: flex;
-  animation: pageIn .9s ease;
-}
-
-.blue-glow {
-  position: absolute;
-  width: 430px;
-  height: 430px;
-  border-radius: 50%;
-  background: rgba(158,220,249,.28);
-  filter: blur(55px);
-  animation: glow 4s ease-in-out infinite;
-}
-
-.flower-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 650px;
-}
-
-/* =========================
-   BOUQUET
-========================= */
-
-.bouquet {
-  position: relative;
-  width: 330px;
-  height: 315px;
-  margin: 0 auto 5px;
-  animation: bouquetIn 1.5s cubic-bezier(.2,.8,.2,1);
-}
-
-.flowers {
-  position: relative;
-  width: 100%;
-  height: 220px;
-}
-
-/* white gerberas */
-
-.flower {
-  position: absolute;
-  width: 105px;
-  height: 105px;
-  z-index: 3;
-}
-
-.flower-one {
-  left: 35px;
-  top: 62px;
-  transform: rotate(-8deg);
-}
-
-.flower-two {
-  left: 112px;
-  top: 12px;
-  transform: scale(1.08);
-}
-
-.flower-three {
-  right: 32px;
-  top: 63px;
-  transform: rotate(8deg);
-}
-
-.petals {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.petals span {
-  position: absolute;
-  width: 43px;
-  height: 59px;
-  left: 31px;
-  top: 22px;
-  background: #ffffff;
-  border-radius: 50% 50% 46% 46%;
-  transform-origin: center 30px;
-  box-shadow:
-    0 3px 8px rgba(100,160,185,.07);
-}
-
-.petals span:nth-child(1) {
-  transform: rotate(0deg) translateY(-27px);
-}
-
-.petals span:nth-child(2) {
-  transform: rotate(45deg) translateY(-27px);
-}
-
-.petals span:nth-child(3) {
-  transform: rotate(90deg) translateY(-27px);
-}
-
-.petals span:nth-child(4) {
-  transform: rotate(135deg) translateY(-27px);
-}
-
-.petals span:nth-child(5) {
-  transform: rotate(180deg) translateY(-27px);
-}
-
-.petals span:nth-child(6) {
-  transform: rotate(225deg) translateY(-27px);
-}
-
-.petals span:nth-child(7) {
-  transform: rotate(270deg) translateY(-27px);
-}
-
-.petals span:nth-child(8) {
-  transform: rotate(315deg) translateY(-27px);
-}
-
-.center {
-  position: absolute;
-  width: 31px;
-  height: 31px;
-  left: 37px;
-  top: 37px;
-  background: #f1d99f;
-  border-radius: 50%;
-  z-index: 5;
-  box-shadow:
-    inset 0 0 0 5px #f8e9c6;
-}
-
-/* blue little flowers */
-
-.blue-flower {
-  position: absolute;
-  color: #73afd0;
-  font-family: Georgia, serif;
-  font-size: 31px;
-  z-index: 6;
-  animation: littleFlower 3s ease-in-out infinite;
-}
-
-.blue-one {
-  left: 10px;
-  top: 103px;
-}
-
-.blue-two {
-  left: 78px;
-  top: 24px;
-  font-size: 24px;
-  animation-delay: .5s;
-}
-
-.blue-three {
-  right: 8px;
-  top: 102px;
-  font-size: 29px;
-  animation-delay: 1s;
-}
-
-.blue-four {
-  right: 76px;
-  top: 39px;
-  font-size: 23px;
-  animation-delay: 1.5s;
-}
-
-.blue-five {
-  left: 48px;
-  top: 135px;
-  font-size: 19px;
-  animation-delay: .8s;
-}
-
-.blue-six {
-  right: 48px;
-  top: 136px;
-  font-size: 19px;
-  animation-delay: 1.2s;
-}
-
-/* stems */
-
-.stems {
-  position: absolute;
-  width: 145px;
-  height: 125px;
-  left: 92px;
-  top: 130px;
-  z-index: 1;
-}
-
-.stems span {
-  position: absolute;
-  width: 5px;
-  height: 125px;
-  background: #82af8c;
-  border-radius: 10px;
-  left: 70px;
-  top: 0;
-  transform-origin: top;
-}
-
-.stems span:nth-child(1) {
-  transform: rotate(-20deg);
-}
-
-.stems span:nth-child(2) {
-  transform: rotate(-4deg);
-}
-
-.stems span:nth-child(3) {
-  transform: rotate(13deg);
-}
-
-.stems span:nth-child(4) {
-  transform: rotate(25deg);
-}
-
-/* leaves */
-
-.leaf {
-  position: absolute;
-  width: 30px;
-  height: 14px;
-  background: #8dbb98;
-  border-radius: 100% 0 100% 0;
-  z-index: 2;
-}
-
-.leaf-one {
-  left: 92px;
-  top: 174px;
-  transform: rotate(-28deg);
-}
-
-.leaf-two {
-  right: 89px;
-  top: 184px;
-  transform: rotate(28deg) scaleX(-1);
-}
-
-/* bouquet wrapper */
-
-.wrap {
-  position: absolute;
-  width: 142px;
-  height: 105px;
-  left: 94px;
-  top: 194px;
-  background: #d5edf9;
-  clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);
-  border-radius: 5px;
-  transform: rotate(2deg);
-  z-index: 8;
-  box-shadow: 0 8px 18px rgba(80,145,180,.12);
-}
-
-.wrap::before {
-  content: "";
-  position: absolute;
-  width: 68px;
-  height: 19px;
-  left: 37px;
-  top: 13px;
-  background: #9bc9df;
-  border-radius: 50%;
-  opacity: .65;
-}
-
-.wrap::after {
-  content: "";
-  position: absolute;
-  width: 35px;
-  height: 5px;
-  left: 53px;
-  top: 43px;
-  background: rgba(255,255,255,.65);
-  border-radius: 999px;
-}
-
-/* final text */
-
-.flower-card {
-  animation: textIn 1.2s ease .5s both;
-}
-
-.flower-card p {
-  margin: 3px 0;
-}
-
-.main-text {
-  color: #5d7d8d;
-  line-height: 1.8;
-  font-size: 16px;
-}
-
-.love {
-  margin-top: 15px;
-  font-family: "Schoolbell", cursive;
-  font-size: 29px;
-  color: #4d91b8;
-}
-
-.birthday {
-  margin-top: 12px;
-  font-family: "Schoolbell", cursive;
-  font-size: 23px;
-  color: #679bb5;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes pageIn {
-
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-@keyframes bouquetIn {
-
-  from {
-    opacity: 0;
-    transform: translateY(45px) scale(.82);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-}
-
-@keyframes textIn {
-
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-@keyframes glow {
-
-  0%,100% {
-    transform: scale(.95);
-    opacity: .5;
-  }
-
-  50% {
-    transform: scale(1.08);
-    opacity: .8;
-  }
-
-}
-
-@keyframes littleFlower {
-
-  0%,100% {
-    transform: rotate(-3deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(4deg) translateY(-4px);
-  }
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .page {
-    padding: 25px 13px;
-  }
-
-  .card {
-    padding: 30px 20px;
-    border-radius: 23px;
-  }
-
-  .message {
-    max-width: 91%;
-  }
-
-  .bouquet {
-    transform: scale(.84);
-    margin-top: -18px;
-    margin-bottom: -25px;
-  }
-
-  .main-text {
-    font-size: 15px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for bina ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Schoolbell&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #eaf7ff;
+      color: #35566b;
+      font-family: "Nunito", sans-serif;
+      overflow-x: hidden;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 35px 20px;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      width: min(680px, 100%);
+      text-align: center;
+    }
+
+    /* ---------------- opening ---------------- */
+
+    .opening {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .opening::before,
+    .opening::after {
+      content: "♡";
+      position: absolute;
+      color: #b9def2;
+      font-size: 35px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .opening::before {
+      top: 18%;
+      left: 12%;
+    }
+
+    .opening::after {
+      right: 12%;
+      bottom: 20%;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(5deg);
+      }
+    }
+
+    .small-note {
+      font-family: "Schoolbell", cursive;
+      font-size: 19px;
+      color: #77a9c4;
+      margin-bottom: 15px;
+    }
+
+    .opening h1 {
+      margin: 0;
+      font-family: "Fredoka", sans-serif;
+      font-weight: 500;
+      font-size: clamp(45px, 12vw, 75px);
+      color: #6398b5;
+      letter-spacing: 1px;
+    }
+
+    .opening-text {
+      max-width: 530px;
+      margin: 25px auto 35px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #527286;
+    }
+
+    .start-btn,
+    .nav-btn {
+      border: none;
+      background: #a9d8ef;
+      color: #31586d;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+      box-shadow: 0 5px 15px rgba(91, 153, 184, 0.12);
+    }
+
+    .start-btn:hover,
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      background: #91cbe7;
+    }
+
+    /* ---------------- birthday page ---------------- */
+
+    .birthday-card {
+      width: min(520px, 100%);
+      margin: auto;
+    }
+
+    .calendar-title {
+      font-family: "Schoolbell", cursive;
+      color: #79a9c2;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .calendar-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid #d2ebf7;
+      border-radius: 25px;
+      padding: 25px 22px;
+      box-shadow: 0 12px 30px rgba(91, 153, 184, 0.09);
+      margin-bottom: 30px;
+    }
+
+    .month {
+      font-family: "Fredoka", sans-serif;
+      font-size: 25px;
+      color: #659ab7;
+      margin-bottom: 18px;
+    }
+
+    .weekdays,
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 7px;
+    }
+
+    .weekdays div {
+      font-size: 12px;
+      color: #9ab9c9;
+      font-weight: 700;
+    }
+
+    .days div {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #64859a;
+      border-radius: 50%;
+    }
+
+    .days .empty {
+      visibility: hidden;
+    }
+
+    .days .birthday {
+      background: #9ed5ee;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(91, 153, 184, 0.2);
+      animation: birthdayPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes birthdayPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .birthday-message {
+      margin-top: 25px;
+    }
+
+    .birthday-message .main-line {
+      font-family: "Schoolbell", cursive;
+      color: #6398b5;
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    .birthday-message p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #58788a;
+      margin: 20px auto 25px;
+      max-width: 480px;
+    }
+
+    /* ---------------- chapters ---------------- */
+
+    .chapter {
+      width: min(640px, 100%);
+    }
+
+    .chapter-number {
+      font-family: "Schoolbell", cursive;
+      color: #78a8c1;
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .chapter-title {
+      font-family: "Fredoka", sans-serif;
+      color: #6096b4;
+      font-size: clamp(31px, 8vw, 47px);
+      font-weight: 500;
+      margin: 0 0 8px;
+    }
+
+    .chapter-date {
+      color: #9bb8c8;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .chapter-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #567687;
+      margin: 0 auto 25px;
+      max-width: 550px;
+    }
+
+    /* ---------------- chat ---------------- */
+
+    .chat-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .chat {
+      max-width: 78%;
+      padding: 10px 14px;
+      border-radius: 17px;
+      font-family: "Comic Neue", cursive;
+      font-size: 15px;
+      line-height: 1.45;
+      position: relative;
+    }
+
+    .chat .name {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 3px;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    .chat.bina {
+      align-self: flex-start;
+      background: #ffffff;
+      border: 1px solid #d9edf6;
+      border-bottom-left-radius: 5px;
+    }
+
+    .chat.neyo {
+      align-self: flex-end;
+      background: #c7e8f7;
+      border-bottom-right-radius: 5px;
+    }
+
+    .highlight {
+      display: inline;
+      background: linear-gradient(
+        transparent 55%,
+        #c8eafb 55%,
+        #c8eafb 92%,
+        transparent 92%
+      );
+    }
+
+    /* ---------------- navigation ---------------- */
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn.secondary {
+      background: transparent;
+      border: 1px solid #b8dcec;
+      color: #6c9ab0;
+      box-shadow: none;
+    }
+
+    .nav-btn.secondary:hover {
+      background: #e0f3fc;
+    }
+
+    /* ---------------- playlist ---------------- */
+
+    .playlist {
+      margin-top: 25px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .song {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid #d8edf6;
+      padding: 10px 13px;
+      border-radius: 14px;
+    }
+
+    .song-number {
+      min-width: 27px;
+      height: 27px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #c7e8f7;
+      color: #6597b1;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .song-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .song-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #53768a;
+    }
+
+    .song-artist {
+      font-size: 12px;
+      color: #8ba9b8;
+    }
+
+    /* ---------------- ending ---------------- */
+
+    .ending-text {
+      font-size: 17px;
+      line-height: 2;
+      color: #557586;
+      white-space: pre-line;
+      margin: 25px auto;
+      max-width: 520px;
+    }
+
+    /* ---------------- bouquet ---------------- */
+
+    .flower-page {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flower-page::before,
+    .flower-page::after {
+      content: "✦";
+      position: absolute;
+      color: #b6dff1;
+      font-size: 25px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .flower-page::before {
+      left: 13%;
+      top: 20%;
+    }
+
+    .flower-page::after {
+      right: 14%;
+      bottom: 20%;
+      animation-delay: 1s;
+    }
+
+    .flower-title {
+      font-family: "Schoolbell", cursive;
+      color: #6d9fb7;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .bouquet {
+      width: 310px;
+      height: 400px;
+      margin: 15px auto 0;
+      position: relative;
+    }
+
+    .wrapping {
+      position: absolute;
+      width: 190px;
+      height: 150px;
+      left: 60px;
+      bottom: 12px;
+      background: linear-gradient(
+        135deg,
+        #d7effa,
+        #b9e0f2
+      );
+      clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+      border-radius: 5px;
+      z-index: 5;
+      box-shadow: 0 10px 20px rgba(81, 139, 167, 0.12);
+    }
+
+    .ribbon {
+      position: absolute;
+      width: 75px;
+      height: 23px;
+      left: 117px;
+      bottom: 100px;
+      background: #91cbe7;
+      border-radius: 15px;
+      z-index: 7;
+    }
+
+    .ribbon::before,
+    .ribbon::after {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 35px;
+      background: #a7d9ee;
+      top: -7px;
+      border-radius: 50% 50% 45% 45%;
+    }
+
+    .ribbon::before {
+      right: 57px;
+      transform: rotate(-25deg);
+    }
+
+    .ribbon::after {
+      left: 57px;
+      transform: rotate(25deg);
+    }
+
+    .stem {
+      position: absolute;
+      width: 5px;
+      height: 210px;
+      background: #7eb49c;
+      bottom: 92px;
+      left: 152px;
+      border-radius: 10px;
+      transform-origin: bottom;
+      z-index: 2;
+    }
+
+    .stem.one {
+      transform: rotate(-16deg);
+    }
+
+    .stem.two {
+      transform: rotate(0deg);
+    }
+
+    .stem.three {
+      transform: rotate(16deg);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 45px;
+      height: 21px;
+      background: #91c5a9;
+      border-radius: 100% 0 100% 0;
+      z-index: 3;
+    }
+
+    .leaf.one {
+      left: 89px;
+      bottom: 150px;
+      transform: rotate(-25deg);
+    }
+
+    .leaf.two {
+      right: 80px;
+      bottom: 175px;
+      transform: scaleX(-1) rotate(-25deg);
+    }
+
+    .leaf.three {
+      left: 116px;
+      bottom: 210px;
+      transform: rotate(-45deg) scale(.8);
+    }
+
+    .flower {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      z-index: 6;
+    }
+
+    .flower.one {
+      left: 55px;
+      top: 63px;
+      transform: rotate(-8deg);
+    }
+
+    .flower.two {
+      left: 103px;
+      top: 20px;
+      transform: scale(1.08);
+    }
+
+    .flower.three {
+      left: 153px;
+      top: 67px;
+      transform: rotate(8deg);
+    }
+
+    .petal {
+      position: absolute;
+      width: 35px;
+      height: 58px;
+      left: 35px;
+      top: 0;
+      background: #a9dcef;
+      border-radius: 50% 50% 45% 45%;
+      transform-origin: 17px 52px;
+      box-shadow: inset 0 -4px 5px rgba(95, 158, 190, 0.08);
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg); }
+    .petal:nth-child(2) { transform: rotate(45deg); }
+    .petal:nth-child(3) { transform: rotate(90deg); }
+    .petal:nth-child(4) { transform: rotate(135deg); }
+    .petal:nth-child(5) { transform: rotate(180deg); }
+    .petal:nth-child(6) { transform: rotate(225deg); }
+    .petal:nth-child(7) { transform: rotate(270deg); }
+    .petal:nth-child(8) { transform: rotate(315deg); }
+
+    .flower-center {
+      position: absolute;
+      width: 33px;
+      height: 33px;
+      background: #d9edf5;
+      border: 5px solid #83c2df;
+      border-radius: 50%;
+      left: 36px;
+      top: 36px;
+      z-index: 10;
+      box-shadow: 0 2px 7px rgba(65, 137, 171, 0.15);
+    }
+
+    .flower-center::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: #f4e8b8;
+    }
+
+    .flower-note {
+      font-family: "Schoolbell", cursive;
+      color: #6e9db3;
+      font-size: 21px;
+      line-height: 1.5;
+      margin: -8px auto 20px;
+      max-width: 470px;
+    }
+
+    .final-love {
+      font-family: "Fredoka", sans-serif;
+      color: #659bb7;
+      font-size: 25px;
+      margin-top: 20px;
+    }
+
+    /* mobile */
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 28px 15px;
+      }
+
+      .chat {
+        max-width: 88%;
+      }
+
+      .bouquet {
+        transform: scale(.88);
+        margin-top: -5px;
+        margin-bottom: -20px;
+      }
+
+      .opening-text,
+      .chapter-text {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<!-- MUSIC -->
-
-<audio id="music" loop>
-  <source src="tapestry.mp3" type="audio/mpeg">
-</audio>
-
-
-<!-- =========================
-     OPENING
-========================= -->
-
-<section class="page active" id="opening">
-
-  <div class="content card">
-
-    <div class="small">
-      for bina,
-    </div>
-
-    <h1>
-      happy birthday ♡
-    </h1>
-
-    <div class="opening-text">
-
-      there are a lot of things i could say today,<br>
-      but i'll just start with this.<br><br>
-
-      i'm really, really glad i met you.<br><br>
-
-      happy birthday, bina. ♡
-
-    </div>
-
-    <button
-      class="start-btn"
-      onclick="startStory()"
-    >
-      start →
-    </button>
-
-  </div>
-
-</section>
+  <!-- background music -->
+  <audio id="bgMusic" loop>
+    <source src="tapestry.mp3" type="audio/mpeg">
+  </audio>
 
 
-<!-- =========================
-     CHAPTER 01
-========================= -->
+  <!-- ================= OPENING ================= -->
 
-<section class="page" id="chapter1">
+  <section class="page active" id="opening">
+    <div class="container opening">
 
-  <div class="content card">
+      <div>
+        <div class="small-note">for someone very special ♡</div>
 
-    <div class="chapter-number">
-      chapter 01
-    </div>
+        <h1>bina</h1>
 
-    <h2>
-      where it started
-    </h2>
+        <p class="opening-text">
+          there are a lot of things i could say today,
+          but i think i'd rather start with this.
+          i'm really, really glad i met you.
+          <br><br>
+          happy birthday.
+          now come here, i have something to show you. ♡
+        </p>
 
-    <div class="date">
-      12 june 2026
-    </div>
-
-    <div class="chat">
-
-      <div class="message bina">
-        <span class="name">bina</span>
-hi cipcip
-      </div>
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-oh, haiii kimi
-sorry aku mau nanya, aku habis stalk akun kamu, terus liat bisa add music
-itu gimana yaa? sorry kudet... uhd lama ga menyelam tele
-      </div>
-
-      <div class="message bina">
-        <span class="name">bina</span>
-kamu masukin musiknya ke roomchat dulu, play musiknya nah klik di bagian atas terus add to profile dehh
-      </div>
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-OH OKAY
-aku coba dulu
-oh iya bisa AHAHAHAHA
-terimakasih yaa kimiii
+        <button class="start-btn" onclick="startStory()">
+          start →
+        </button>
       </div>
 
     </div>
-
-    <div class="narration">
-
-      this was where we started talking.
-
-      <br><br>
-
-      at first, it was just about music.
-
-      <br><br>
-
-      then we started talking about games, random stuff, and pretty much anything that came up.
-
-      <br><br>
-
-      and that's how i started getting used to having you around.
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('opening')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter2')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     CHAPTER 02
-========================= -->
+  <!-- ================= 23 SEPTEMBER ================= -->
 
-<section class="page" id="chapter2">
+  <section class="page" id="birthday">
+    <div class="container birthday-card">
 
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 02
-    </div>
-
-    <h2>
-      maybe it was a confession
-    </h2>
-
-    <div class="date">
-      16 june 2026
-    </div>
-
-    <div class="chat">
-
-      <div class="message bina">
-        <span class="name">bina</span>
-*sending her cutie bang
-rate poni aku skrg
+      <div class="calendar-title">
+        one date before everything else
       </div>
 
-      <div class="message neyo">
-        <span class="name">neyo</span>
-lucu banget kamu
-mwhehehehhehehe berapa ya
-gatau ah
-kamu lucu banget
-lucu
-menggemaskan
-naksir
+      <div class="calendar-card">
+
+        <div class="month">
+          september 2026
+        </div>
+
+        <div class="weekdays">
+          <div>s</div>
+          <div>m</div>
+          <div>t</div>
+          <div>w</div>
+          <div>t</div>
+          <div>f</div>
+          <div>s</div>
+        </div>
+
+        <div class="days">
+          <div></div>
+          <div></div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>18</div>
+          <div>19</div>
+
+          <div>20</div>
+          <div>21</div>
+          <div>22</div>
+          <div class="birthday">23</div>
+          <div>24</div>
+          <div>25</div>
+          <div>26</div>
+
+          <div>27</div>
+          <div>28</div>
+          <div>29</div>
+          <div>30</div>
+          <div class="empty"></div>
+          <div class="empty"></div>
+          <div class="empty"></div>
+        </div>
+
+        <div class="birthday-message">
+
+          <div class="main-line">
+            someone really important to me was born.
+          </div>
+
+          <p>
+            thank you for being born,
+            and for becoming such an important
+            part of my life. 
+          </p>
+
+          <p>
+            now, let me take you back
+            to where it all started.
+          </p>
+
+        </div>
+
       </div>
 
-    </div>
-
-    <div class="narration">
-
-      i said “naksir” like i was joking.
-
-      <br><br>
-
-      but honestly, i think i already liked you.
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter1')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter3')"
-      >
-        next →
+      <button class="nav-btn" onclick="goTo('chapter1')">
+        let's go →
       </button>
 
     </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     CHAPTER 03
-========================= -->
+  <!-- ================= CHAPTER 01 ================= -->
 
-<section class="page" id="chapter3">
+  <section class="page" id="chapter1">
+    <div class="container chapter">
 
-  <div class="content card">
+      <div class="chapter-number">chapter 01</div>
 
-    <div class="chapter-number">
-      chapter 03
-    </div>
+      <h2 class="chapter-title">
+        the first chat
+      </h2>
 
-    <h2>
-      can i like you?
-    </h2>
-
-    <div class="date">
-      17 june 2026
-    </div>
-
-    <div class="chat">
-
-      <div class="message bina">
-        <span class="name">bina</span>
-*sent her pretty pap
+      <div class="chapter-date">
+        12 june 2026
       </div>
 
-      <div class="message neyo">
-        <span class="name">neyo</span>
-eh aku boleh gak naksir kamu
-      </div>
-
-      <div class="message bina">
-        <span class="name">bina</span>
-ngacooo
-      </div>
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-kok ngaco jir
-      </div>
-
-    </div>
-
-    <div class="narration">
-
-      this time, i wasn't really joking.
-
-      <br><br>
-
-      i actually wanted to know if i was allowed to like you.
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter2')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter4')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CHAPTER 04
-========================= -->
-
-<section class="page" id="chapter4">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 04
-    </div>
-
-    <h2>
-      very subtle of me
-    </h2>
-
-    <div class="date">
-      18 june 2026
-    </div>
-
-    <div class="chat">
-
-      <div class="message bina">
-        <span class="name">bina</span>
-apa ya supaya ga mual terus
-      </div>
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-coba
-aku liat kamu
-coba dulu ini jir, bs gak menghilangkan mual akibat kora kora
-      </div>
-
-      <div class="message bina">
-        <span class="name">bina</span>
-YG BNR AJ
-kalo engga gmn
-      </div>
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-coba dulu
-kalo ga, yaudah
-      </div>
-
-    </div>
-
-    <div class="narration">
-
-      i just wanted a picture of you.
-
-      <br><br>
-
-      very subtle of me.
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter3')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter5')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CHAPTER 05
-========================= -->
-
-<section class="page" id="chapter5">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 05
-    </div>
-
-    <h2>
-      and then you said yes
-    </h2>
-
-    <div class="date">
-      18 june 2026
-    </div>
-
-    <div class="chat">
-
-      <div class="message neyo">
-        <span class="name">neyo</span>
-jd pacarku ya
-
-pls
-      </div>
-
-      <div class="message bina">
-        <span class="name">bina</span>
-iya mau
-      </div>
-
-    </div>
-
-    <div class="narration">
-
-      wow.
-
-      <br><br>
-
-      looking back at this now, it still feels a little unreal.
-
-      <br><br>
-
-      you became my girlfriend.
-
-      <br><br>
-
-      and after that, our whole story began.
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter4')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter6')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CHAPTER 06
-========================= -->
-
-<section class="page" id="chapter6">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 06
-    </div>
-
-    <h2>
-      our firsts
-    </h2>
-
-
-    <div class="first-item">
-
-      <div class="first-date">
-        19 june 2026
-      </div>
-
-      <h3>
-        our first spotify jam
-      </h3>
-
-      <p>
-        we were still pretty new to each other, so even just listening to the same songs felt nice. it was one of those things that made me think, oh, we're actually doing this together now.
+      <p class="chapter-text">
+        this was where it all started.
+        just a simple chat that i didn't know
+        would eventually become this important to me.
       </p>
 
-    </div>
+      <div class="chat-box">
 
+        <div class="chat bina">
+          <span class="name">bina</span>
+          hi cipcip
+        </div>
 
-    <div class="first-item">
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          hi
+        </div>
 
-      <div class="first-date">
-        21 june 2026
+        <div class="chat bina">
+          <span class="name">bina</span>
+          what music do u listen to
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          banyak sih...
+        </div>
+
       </div>
 
-      <h3>
-        we became tiktok moots
-      </h3>
-
-      <p>
-        another little thing that happened between us. nothing huge, but i remember being happy about it.
+      <p class="chapter-text">
+        nothing about that first conversation looked
+        like the beginning of something big.
+        but i'm glad it happened.
       </p>
 
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('birthday')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter2')">
+          next →
+        </button>
+      </div>
+
     </div>
+  </section>
 
 
-    <div class="first-item">
+  <!-- ================= CHAPTER 02 ================= -->
 
-      <div class="first-date">
+  <section class="page" id="chapter2">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 02</div>
+
+      <h2 class="chapter-title">
+        getting closer
+      </h2>
+
+      <div class="chapter-date">
+        16 june 2026
+      </div>
+
+      <p class="chapter-text">
+        somehow, talking to you started becoming
+        something i looked forward to.
+        the conversations got longer,
+        and i started noticing the little things.
+      </p>
+
+      <div class="chat-box">
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          oi oi
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          apaan 😭
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          HAHAHAHA
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          ketawa mulu
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        and somewhere between all those little
+        conversations, i started liking having you around.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter1')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter3')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CHAPTER 03 ================= -->
+
+  <section class="page" id="chapter3">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 03</div>
+
+      <h2 class="chapter-title">
+        wait... do i like you?
+      </h2>
+
+      <div class="chapter-date">
+        17 june 2026
+      </div>
+
+      <p class="chapter-text">
+        then came the moment where i started wondering
+        if this was still just me being playful,
+        or if i actually liked you.
+      </p>
+
+      <div class="chat-box">
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          boleh gak naksir kamu
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          ...
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        maybe i said it like a joke.
+        maybe i didn't.
+        either way, i think this was when
+        things started feeling a little different.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter2')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter4')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CHAPTER 04 ================= -->
+
+  <section class="page" id="chapter4">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 04</div>
+
+      <h2 class="chapter-title">
+        so... we're us now
+      </h2>
+
+      <div class="chapter-date">
+        18 june 2026
+      </div>
+
+      <p class="chapter-text">
+        this was the day everything became a little more real.
+      </p>
+
+      <div class="chat-box">
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          jd pacarku ya
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          iya mau
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        and just like that,
+        we became us.
+        <br><br>
+        18 june 2026.
+        i'll always remember this date.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter3')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter5')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CHAPTER 05 ================= -->
+
+  <section class="page" id="chapter5">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 05</div>
+
+      <h2 class="chapter-title">
+        little things
+      </h2>
+
+      <div class="chapter-date">
+        19 june 2026 → 21 june 2026
+      </div>
+
+      <p class="chapter-text">
+        after that, it was all the little things.
+        our first spotify jam,
+        becoming tiktok moots,
+        and slowly adding more memories
+        to something that had only just started.
+      </p>
+
+      <div class="chat-box">
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          oi ikut jam
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          ayok
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          udah moot belom
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          udah 😭
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        they're small things,
+        but they're still our things.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter4')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter6')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CHAPTER 06 ================= -->
+
+  <section class="page" id="chapter6">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 06</div>
+
+      <h2 class="chapter-title">
+        our first game
+      </h2>
+
+      <div class="chapter-date">
         1 july 2026
       </div>
 
-      <h3>
-        our first epep game together
-      </h3>
-
-      <p>
-        our first time playing together. i don't even remember what we did in the game anymore, but i remember being happy that i got to play with you.
+      <p class="chapter-text">
+        our first epep together.
+        another tiny memory that ended up
+        becoming one of the things i remember.
       </p>
 
+      <div class="chat-box">
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          main yuk
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          gas
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          jangan beban
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          DIEM 😭
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        it wasn't really about the game.
+        i just liked doing things with you.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter5')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter7')">
+          next →
+        </button>
+      </div>
+
     </div>
+  </section>
 
 
-    <div class="first-item">
+  <!-- ================= CHAPTER 07 ================= -->
 
-      <div class="first-date">
+  <section class="page" id="chapter7">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 07</div>
+
+      <h2 class="chapter-title">
+        our first call
+      </h2>
+
+      <div class="chapter-date">
         30 july 2026
       </div>
 
-      <h3>
-        our first call
-      </h3>
-
-      <p>
-        and BHAPPP, this one changed everything WKWKWK.
-
-        <br><br>
-
-        i got so used to hearing your voice that after that, i kept wanting to call you again. like... why was one call not enough 😭
+      <p class="chapter-text">
+        then came our first call.
+        and apparently, one call was enough
+        to make me want to call you all the time.
       </p>
 
+      <div class="chat-box">
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          call?
+        </div>
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          iya
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          bentar doang
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        famous last words.
+      </p>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter6')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('chapter8')">
+          next →
+        </button>
+      </div>
+
     </div>
+  </section>
 
 
-    <div class="first-item">
+  <!-- ================= CHAPTER 08 ================= -->
 
-      <div class="first-date">
+  <section class="page" id="chapter8">
+    <div class="container chapter">
+
+      <div class="chapter-number">chapter 08</div>
+
+      <h2 class="chapter-title">
+        another first
+      </h2>
+
+      <div class="chapter-date">
         19 september 2026
       </div>
 
-      <h3>
-        our first nobar
-      </h3>
-
-      <p>
-        this one made me really happy. after all the chats, calls, and everything else, getting to watch something together felt really nice.
+      <p class="chapter-text">
+        our first nobar.
+        i remember being really happy that day.
+        not because it was something huge,
+        but because it was another thing
+        i got to experience with you.
       </p>
 
-    </div>
-
-
-    <div class="narration">
-
-      there were a lot of firsts after we became us.
-
-      <br><br>
-
-      and i think that's what makes looking back at these dates so fun. they're small moments, but they're ours.
-
-    </div>
-
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter5')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter7')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CHAPTER 07
-========================= -->
-
-<section class="page" id="chapter7">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 07
-    </div>
-
-    <h2>
-      things i love about you
-    </h2>
-
-    <div class="narration">
-
-      i think one of the first things i liked about you was how straightforward you were. you didn't try to act cool even though we had just started talking. you could just talk to me normally, and i liked that about you.
-
-      <br><br>
-
-      the more i got to know you, the more things i started liking about you. you're funny, especially when you say “oi oi oi” to me. i love your habits, the way you call me sayang, compliment me, and tell me you love me. i love hearing those things from you.
-
-      <br><br>
-
-      i love how you take care of me too. you listen whenever i have something to say, even when i'm just complaining about something small. you never judge me for it. you just listen, and that's something i'll always appreciate.
-
-      <br><br>
-
-      one thing i really love about you is how you always know how to get my attention. you draw me, you remember the things i like, and you always find a way to bring up things that i love. you always know what will make me stop and pay attention, and i really like that about you.
-
-      <br><br>
-
-      and i love the little ways you show that i'm important to you. i notice them, even when i don't say anything about it. and every time i do, it makes me happy.
-
-      <br><br>
-
-      i don't really know how to explain everything i love about you. i just know that when i think about why i chose you, the answer is pretty simple.
-
-      <br><br>
-
-      cause you're bina.
-
-      <br><br>
-
-      and there's only one bina. ♡
-
-    </div>
-
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter6')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('chapter8')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CHAPTER 08
-========================= -->
-
-<section class="page" id="chapter8">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      chapter 08
-    </div>
-
-    <h2>
-      happy birthday, my love
-    </h2>
-
-    <div class="narration">
-
-      i don't really know where to start, because even after everything i've written about you, i still feel like there's so much more i want to say.
-
-      <br><br>
-
-      i'm really happy i met you, bina. we started with something so simple, just talking about music and random things, until you became someone i look for every day. now, i can't really imagine going through a whole day without talking to you.
-
-      <br><br>
-
-      i want to keep hearing about your day. i want to know what made you laugh, what annoyed you, what you've been thinking about, or even the most boring thing that happened. i want to hear all of it. i like knowing what's going on in your life, even when it's just something small.
-
-      <br><br>
-
-      i want to keep having conversations with you that go on for hours, calling you for no reason, playing games together, watching things together, laughing at things that probably aren't even that funny, and just being ourselves. i don't need anything big. i just like having you there.
-
-      <br><br>
-
-      and whenever you need someone, i want you to know that you can come to me. i'll listen to your stories, your complaints, your worries, everything. i might not always know what to say or how to fix things, but i'll always try to be there for you.
-
-      <br><br>
-
-      thank you for choosing me and for letting me be a part of your life. thank you for all the care you give me, for listening to me, and for making me feel loved in so many different ways.
-
-      <br><br>
-
-      for this new year of your life, i hope you get more reasons to be happy. i hope you get to experience things you've been waiting for, reach the goals you've been working on, and meet people who always treat you with the kindness you deserve.
-
-      <br><br>
-
-      i hope you become more confident in yourself and in the things you can do. i hope you never feel like you have to be perfect to be loved or appreciated. i hope you keep growing into the person you want to be, at your own pace.
-
-      <br><br>
-
-      when things get hard, i hope you remember that you don't have to handle everything alone. i hope you always have someone to listen to you, support you, and remind you that you're doing better than you think.
-
-      <br><br>
-
-      most of all, i hope you're happy. not just today because it's your birthday, but on ordinary days too. i hope there are more days where you wake up excited about something, laugh until your stomach hurts, and go to sleep feeling like it was a good day.
-
-      <br><br>
-
-      and selfishly, i hope i get to be there for a lot of those days.
-
-      <br><br>
-
-      happy birthday, bina.
-
-      <br><br>
-
-      i love you. ♡
-
-    </div>
-
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter7')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('playlist')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PLAYLIST
-========================= -->
-
-<section class="page" id="playlist">
-
-  <div class="content card">
-
-    <div class="chapter-number">
-      a little something
-    </div>
-
-    <h2>
-      23 songs for bina
-    </h2>
-
-    <div class="playlist-intro">
-
-      <p>
-        oh, one more thing.
+      <div class="chat-box">
+
+        <div class="chat bina">
+          <span class="name">bina</span>
+          jadi nobar?
+        </div>
+
+        <div class="chat neyo">
+          <span class="name">neyo</span>
+          jadiii
+        </div>
+
+      </div>
+
+      <p class="chapter-text">
+        and now we're here.
+        <span class="highlight">
+          still making little memories together.
+        </span>
       </p>
 
-      <p>
-        i made something for you.
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter7')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('playlist')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PLAYLIST ================= -->
+
+  <section class="page" id="playlist">
+    <div class="container chapter">
+
+      <div class="chapter-number">one more thing</div>
+
+      <h2 class="chapter-title">
+        23 songs for 23 september
+      </h2>
+
+      <p class="chapter-text">
+        because apparently i couldn't just pick one song.
+        so here are 23 of them.
       </p>
 
-      <p>
-        23 songs for bina.
-      </p>
-
-      <p>
-        because your birthday is on the 23rd.
-      </p>
-
-      <p>
-        every song here reminds me of you in some way.
-      </p>
-
-      <p>
-        so... press play? ♡
-      </p>
-
-    </div>
-
-
-    <div class="song">
-      <div class="song-number">01</div>
-      <div>
-        <div class="song-name">fallen star</div>
-        <div class="song-artist">the neighbourhood</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">02</div>
-      <div>
-        <div class="song-name">compass</div>
-        <div class="song-artist">the neighbourhood</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">03</div>
-      <div>
-        <div class="song-name">heaven</div>
-        <div class="song-artist">the neighbourhood</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">04</div>
-      <div>
-        <div class="song-name">all i need to hear</div>
-        <div class="song-artist">the 1975</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">05</div>
-      <div>
-        <div class="song-name">oh caroline</div>
-        <div class="song-artist">the 1975</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">06</div>
-      <div>
-        <div class="song-name">medicine</div>
-        <div class="song-artist">the 1975</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">07</div>
-      <div>
-        <div class="song-name">sofia</div>
-        <div class="song-artist">clairo</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">08</div>
-      <div>
-        <div class="song-name">2 hold u</div>
-        <div class="song-artist">clairo</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">09</div>
-      <div>
-        <div class="song-name">north</div>
-        <div class="song-artist">clairo</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">10</div>
-      <div>
-        <div class="song-name">love songs</div>
-        <div class="song-artist">clairo</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">11</div>
-      <div>
-        <div class="song-name">soft</div>
-        <div class="song-artist">lany</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">12</div>
-      <div>
-        <div class="song-name">how to hold an angel</div>
-        <div class="song-artist">lany</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">13</div>
-      <div>
-        <div class="song-name">nothing</div>
-        <div class="song-artist">bruno major</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">14</div>
-      <div>
-        <div class="song-name">the most beautiful thing</div>
-        <div class="song-artist">bruno major</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">15</div>
-      <div>
-        <div class="song-name">sweater weather</div>
-        <div class="song-artist">the neighbourhood</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">16</div>
-      <div>
-        <div class="song-name">hold me down</div>
-        <div class="song-artist">daniel caesar</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">17</div>
-      <div>
-        <div class="song-name">blessed</div>
-        <div class="song-artist">daniel caesar</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">18</div>
-      <div>
-        <div class="song-name">we find love</div>
-        <div class="song-artist">daniel caesar</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">19</div>
-      <div>
-        <div class="song-name">keep on loving you</div>
-        <div class="song-artist">cigarettes after sex</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">20</div>
-      <div>
-        <div class="song-name">dark red</div>
-        <div class="song-artist">steve lacy</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">21</div>
-      <div>
-        <div class="song-name">soft spot</div>
-        <div class="song-artist">keshi</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">22</div>
-      <div>
-        <div class="song-name">i choose you</div>
-        <div class="song-artist">keshi</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song-number">23</div>
-      <div>
-        <div class="song-name">panasea</div>
-        <div class="song-artist">rumahsakit</div>
-      </div>
-    </div>
-
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('chapter8')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="goTo('ending')"
-      >
-        next →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ENDING
-========================= -->
-
-<section class="page" id="ending">
-
-  <div
-    class="content card"
-    style="text-align:center"
-  >
-
-    <div class="small">
-      that's it.
-    </div>
-
-    <h2>
-      23 songs, just for you.
-    </h2>
-
-    <div class="ending-text">
-
-      <p>
-        happy birthday, bina.
-      </p>
-
-      <p>
-        i hope you know how loved you are. ♡
-      </p>
-
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="back-btn"
-        onclick="goTo('playlist')"
-      >
-        ← back
-      </button>
-
-      <button
-        onclick="showFlowers()"
-      >
-        one last thing →
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FINAL FLOWER SURPRISE
-========================= -->
-
-<section id="flower-surprise">
-
-  <div class="blue-glow"></div>
-
-  <div class="flower-content">
-
-
-    <!-- BOUQUET -->
-
-    <div class="bouquet">
-
-      <div class="flowers">
-
-
-        <!-- GERBERA 1 -->
-
-        <div class="flower flower-one">
-
-          <div class="petals">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
+      <div class="playlist">
+
+        <div class="song">
+          <div class="song-number">01</div>
+          <div class="song-info">
+            <div class="song-title">fallen star</div>
+            <div class="song-artist">the neighbourhood</div>
           </div>
-
-          <div class="center"></div>
-
         </div>
 
-
-        <!-- GERBERA 2 -->
-
-        <div class="flower flower-two">
-
-          <div class="petals">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="song">
+          <div class="song-number">02</div>
+          <div class="song-info">
+            <div class="song-title">compass</div>
+            <div class="song-artist">the neighbourhood</div>
           </div>
-
-          <div class="center"></div>
-
         </div>
 
-
-        <!-- GERBERA 3 -->
-
-        <div class="flower flower-three">
-
-          <div class="petals">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="song">
+          <div class="song-number">03</div>
+          <div class="song-info">
+            <div class="song-title">heaven</div>
+            <div class="song-artist">the neighbourhood</div>
           </div>
-
-          <div class="center"></div>
-
         </div>
 
-
-        <!-- BLUE FLOWERS -->
-
-        <div class="blue-flower blue-one">
-          ✿
+        <div class="song">
+          <div class="song-number">04</div>
+          <div class="song-info">
+            <div class="song-title">all i need to hear</div>
+            <div class="song-artist">the 1975</div>
+          </div>
         </div>
 
-        <div class="blue-flower blue-two">
-          ✿
+        <div class="song">
+          <div class="song-number">05</div>
+          <div class="song-info">
+            <div class="song-title">oh caroline</div>
+            <div class="song-artist">the 1975</div>
+          </div>
         </div>
 
-        <div class="blue-flower blue-three">
-          ✿
+        <div class="song">
+          <div class="song-number">06</div>
+          <div class="song-info">
+            <div class="song-title">medicine</div>
+            <div class="song-artist">the 1975</div>
+          </div>
         </div>
 
-        <div class="blue-flower blue-four">
-          ✿
+        <div class="song">
+          <div class="song-number">07</div>
+          <div class="song-info">
+            <div class="song-title">sofia</div>
+            <div class="song-artist">clairo</div>
+          </div>
         </div>
 
-        <div class="blue-flower blue-five">
-          ✿
+        <div class="song">
+          <div class="song-number">08</div>
+          <div class="song-info">
+            <div class="song-title">2 hold u</div>
+            <div class="song-artist">clairo</div>
+          </div>
         </div>
 
-        <div class="blue-flower blue-six">
-          ✿
+        <div class="song">
+          <div class="song-number">09</div>
+          <div class="song-info">
+            <div class="song-title">north</div>
+            <div class="song-artist">clairo</div>
+          </div>
         </div>
 
-
-        <!-- STEMS -->
-
-        <div class="stems">
-
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-
+        <div class="song">
+          <div class="song-number">10</div>
+          <div class="song-info">
+            <div class="song-title">love songs</div>
+            <div class="song-artist">clairo</div>
+          </div>
         </div>
 
+        <div class="song">
+          <div class="song-number">11</div>
+          <div class="song-info">
+            <div class="song-title">soft</div>
+            <div class="song-artist">lany</div>
+          </div>
+        </div>
 
-        <!-- LEAVES -->
+        <div class="song">
+          <div class="song-number">12</div>
+          <div class="song-info">
+            <div class="song-title">how to hold an angel</div>
+            <div class="song-artist">lany</div>
+          </div>
+        </div>
 
-        <div class="leaf leaf-one"></div>
-        <div class="leaf leaf-two"></div>
+        <div class="song">
+          <div class="song-number">13</div>
+          <div class="song-info">
+            <div class="song-title">nothing</div>
+            <div class="song-artist">bruno major</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">14</div>
+          <div class="song-info">
+            <div class="song-title">the most beautiful thing</div>
+            <div class="song-artist">bruno major</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">15</div>
+          <div class="song-info">
+            <div class="song-title">easily</div>
+            <div class="song-artist">bruno major</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">16</div>
+          <div class="song-info">
+            <div class="song-title">hold me down</div>
+            <div class="song-artist">daniel caesar</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">17</div>
+          <div class="song-info">
+            <div class="song-title">blessed</div>
+            <div class="song-artist">daniel caesar</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">18</div>
+          <div class="song-info">
+            <div class="song-title">we find love</div>
+            <div class="song-artist">daniel caesar</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">19</div>
+          <div class="song-info">
+            <div class="song-title">keep on loving you</div>
+            <div class="song-artist">cigarettes after sex</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">20</div>
+          <div class="song-info">
+            <div class="song-title">dark red</div>
+            <div class="song-artist">steve lacy</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">21</div>
+          <div class="song-info">
+            <div class="song-title">soft spot</div>
+            <div class="song-artist">keshi</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">22</div>
+          <div class="song-info">
+            <div class="song-title">i choose you</div>
+            <div class="song-artist">keshi</div>
+          </div>
+        </div>
+
+        <div class="song">
+          <div class="song-number">23</div>
+          <div class="song-info">
+            <div class="song-title">panasea</div>
+            <div class="song-artist">rumahsakit</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('chapter8')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('ending')">
+          next →
+        </button>
+      </div>
+
+    </div>
+  </section>
 
 
-        <!-- WRAPPER -->
+  <!-- ================= ENDING ================= -->
 
-        <div class="wrap"></div>
+  <section class="page" id="ending">
+    <div class="container">
+
+      <div class="chapter-number">
+        before you go
+      </div>
+
+      <h2 class="chapter-title">
+        one last thing
+      </h2>
+
+      <p class="ending-text">i hope you know how much you mean to me.
+
+thank you for every conversation,
+every call,
+every little thing,
+and every memory we've made so far.
+
+i'm really happy that i met you.
+
+happy birthday, sayang. ♡</p>
+
+      <div class="navigation">
+
+        <button class="nav-btn secondary" onclick="goTo('playlist')">
+          ← back
+        </button>
+
+        <button class="nav-btn" onclick="goTo('flower-surprise')">
+          one more → 
+        </button>
 
       </div>
 
     </div>
+  </section>
 
 
-    <!-- FINAL MESSAGE -->
+  <!-- ================= FLOWER SURPRISE ================= -->
 
-    <div class="flower-card">
+  <section class="page flower-page" id="flower-surprise">
+    <div class="container">
 
-      <div class="main-text">
+      <div class="flower-title">
+        these are for you ♡
+      </div>
 
-        <p>
-          i wish i could actually be there
-        </p>
+      <div class="bouquet">
 
-        <p>
-          to hand these flowers to you myself.
-        </p>
+        <!-- stems -->
+        <div class="stem one"></div>
+        <div class="stem two"></div>
+        <div class="stem three"></div>
 
-        <br>
+        <!-- leaves -->
+        <div class="leaf one"></div>
+        <div class="leaf two"></div>
+        <div class="leaf three"></div>
 
-        <p>
-          but since i can't,
-        </p>
+        <!-- flower 1 -->
+        <div class="flower one">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="flower-center"></div>
+        </div>
 
-        <p>
-          i guess i'll have to do it this way.
-        </p>
+        <!-- flower 2 -->
+        <div class="flower two">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="flower-center"></div>
+        </div>
 
-        <br>
+        <!-- flower 3 -->
+        <div class="flower three">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="flower-center"></div>
+        </div>
 
-        <p>
-          i brought you three white flowers,
-        </p>
-
-        <p>
-          and i think you already know what they mean.
-        </p>
+        <div class="wrapping"></div>
+        <div class="ribbon"></div>
 
       </div>
 
+      <div class="flower-note">
+        three little blue flowers,
+        because i know how much you love blue.
+        <br><br>
+        and i think you already know
+        what three flowers mean.
+      </div>
 
-      <div class="love">
+      <div class="final-love">
         i love you. ♡
+        <br>
+        happy birthday, bina.
       </div>
 
-
-      <div class="birthday">
-        happy birthday, sayang.
+      <div class="navigation">
+        <button class="nav-btn secondary" onclick="goTo('ending')">
+          ← back
+        </button>
       </div>
 
     </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<script>
+  <script>
 
-/* =========================
-   PAGE NAVIGATION
-========================= */
+    const music = document.getElementById("bgMusic");
 
-const pages = [
-  "opening",
-  "chapter1",
-  "chapter2",
-  "chapter3",
-  "chapter4",
-  "chapter5",
-  "chapter6",
-  "chapter7",
-  "chapter8",
-  "playlist",
-  "ending"
-];
+    function startStory() {
+
+      music.volume = 0.35;
+
+      music.play().catch(() => {
+        console.log("music needs user interaction");
+      });
+
+      goTo("birthday");
+    }
 
 
-function goTo(id) {
+    function goTo(pageId) {
 
-  document
-    .querySelectorAll(".page")
-    .forEach(page => {
-      page.classList.remove("active");
+      const pages = document.querySelectorAll(".page");
+
+      pages.forEach(page => {
+        page.classList.remove("active");
+      });
+
+      const target = document.getElementById(pageId);
+
+      if (target) {
+        target.classList.add("active");
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+      const activePage = document.querySelector(".page.active");
+
+      if (!activePage) return;
+
+      const id = activePage.id;
+
+      const order = [
+        "opening",
+        "birthday",
+        "chapter1",
+        "chapter2",
+        "chapter3",
+        "chapter4",
+        "chapter5",
+        "chapter6",
+        "chapter7",
+        "chapter8",
+        "playlist",
+        "ending",
+        "flower-surprise"
+      ];
+
+      const currentIndex = order.indexOf(id);
+
+      if (event.key === "ArrowRight" && currentIndex < order.length - 1) {
+        goTo(order[currentIndex + 1]);
+      }
+
+      if (event.key === "ArrowLeft" && currentIndex > 0) {
+        goTo(order[currentIndex - 1]);
+      }
+
     });
 
-  document
-    .getElementById("flower-surprise")
-    .classList.remove("active");
-
-  document
-    .getElementById(id)
-    .classList.add("active");
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-}
-
-
-/* =========================
-   START + MUSIC
-========================= */
-
-function startStory() {
-
-  const music =
-    document.getElementById("music");
-
-  music.volume = 0.35;
-
-  music.play().catch(() => {});
-
-  goTo("chapter1");
-
-}
-
-
-/* =========================
-   FLOWER ENDING
-========================= */
-
-function showFlowers() {
-
-  document
-    .querySelectorAll(".page")
-    .forEach(page => {
-      page.classList.remove("active");
-    });
-
-  document
-    .getElementById("flower-surprise")
-    .classList.add("active");
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-}
-
-
-/* =========================
-   KEYBOARD ARROWS
-========================= */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      event.target.tagName === "INPUT" ||
-      event.target.tagName === "TEXTAREA"
-    ) {
-      return;
-    }
-
-    const activePage =
-      document.querySelector(".page.active");
-
-    if (!activePage) return;
-
-    const currentIndex =
-      pages.indexOf(activePage.id);
-
-
-    if (event.key === "ArrowRight") {
-
-      if (
-        currentIndex >= 0 &&
-        currentIndex < pages.length - 1
-      ) {
-
-        goTo(
-          pages[currentIndex + 1]
-        );
-
-      }
-
-      else if (
-        activePage.id === "ending"
-      ) {
-
-        showFlowers();
-
-      }
-
-    }
-
-
-    if (event.key === "ArrowLeft") {
-
-      if (currentIndex > 0) {
-
-        goTo(
-          pages[currentIndex - 1]
-        );
-
-      }
-
-    }
-
-  }
-);
-
-</script>
+  </script>
 
 </body>
 </html>
